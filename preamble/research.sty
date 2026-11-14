@@ -1,0 +1,36 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{research}[2026/11/14 Shared mathematical preamble]
+\RequirePackage[T1]{fontenc}
+\RequirePackage{amsmath,amssymb,amsthm}
+\RequirePackage{xcolor}
+\RequirePackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\RequirePackage{semantex}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{convention}[theorem]{Convention}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{counterexample}[theorem]{Counterexample}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{question}[theorem]{Question}
+\DeclareMathOperator{\im}{im}
+
+% A section built alone receives the same bibliography as the assembled draft.
+\newif\ifResearchHasCitations
+\newif\ifResearchHasBibliography
+\AddToHook{cmd/cite/before}{\global\ResearchHasCitationstrue}
+\AddToHook{cmd/bibliography/before}{\global\ResearchHasBibliographytrue}
+\AtEndDocument{%
+  \ifResearchHasCitations
+    \ifResearchHasBibliography\else
+      \bibliographystyle{alpha}%
+      \bibliography{references/references}%
+    \fi
+  \fi
+}

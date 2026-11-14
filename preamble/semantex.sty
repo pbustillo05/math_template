@@ -1,0 +1,18 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{semantex}[2026/11/14 Invisible research annotations]
+% Hyperref is loaded by research.sty before this package.
+\newcommand{\xref}[1]{\ref{#1}}
+\newcommand{\dxref}[1]{\ref{#1}}
+\newcommand{\hxref}[1]{}
+\newcommand{\hdxref}[1]{}
+\newcommand{\proves}[2]{}
+\newcommand{\evidence}[2]{}
+\newcommand{\sourceat}[3]{}
+\newcommand{\sourcepage}[3]{}
+\newcommand{\leanref}[3]{}
+\newcommand{\sorry}[2]{%
+  \phantomsection\label{#1}%
+  \PackageWarning{semantex}{Unresolved proof obligation: #1}%
+  \par\noindent\textcolor{red}{\textbf{Proof obligation \texttt{\detokenize{#1}}:} #2}\par
+}
+\endinput

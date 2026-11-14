@@ -1,0 +1,8 @@
+{
+  "version":"2.0.0",
+  "tasks":[
+    {"label":"Math: build PDF","type":"process","command":"make","args":["pdf"],"group":{"kind":"build","isDefault":true},"problemMatcher":[]},
+    {"label":"Math: check","type":"process","command":"make","args":["check"],"group":"test","problemMatcher":[]},
+    {"label":"Math: dependency graph","type":"process","command":"make","args":["graph"],"problemMatcher":[]}
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "semantex-navigation",
+  "displayName": "SemanTeX Research Navigation",
+  "publisher": "math-template",
+  "version": "0.1.0",
+  "description": "Exact LaTeX environment hovers, label navigation and dependency trees for a math research workspace.",
+  "engines": {"vscode": "^1.85.0"},
+  "categories": ["Programming Languages"],
+  "main": "./extension.js",
+  "activationEvents": ["onLanguage:latex", "onLanguage:tex", "workspaceContains:scripts/semantex"],
+  "capabilities": {"untrustedWorkspaces": {"supported": false}},
+  "contributes": {
+    "commands": [
+      {"command": "semantex.refresh", "title": "SemanTeX: Refresh Index"},
+      {"command": "semantex.showDependencies", "title": "SemanTeX: Show Label Dependencies"},
+      {"command": "semantex.openUnit", "title": "SemanTeX: Open Unit"}
+    ],
+    "views": {"explorer": [{"id": "semantex.dependencies", "name": "SemanTeX dependencies"}]},
+    "configuration": {
+      "title": "SemanTeX",
+      "properties": {
+        "semantex.pythonPath": {"type": "string", "default": "python3", "description": "Python 3.10+ interpreter executable (not a shell command)."}
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "files.exclude": {"**/__pycache__": true},
+  "search.exclude": {"build/**": true,"archived/**": true},
+  "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.view.pdf.viewer": "tab"
+}

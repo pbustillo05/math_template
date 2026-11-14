@@ -1,0 +1,28 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\section{Idempotent maps}\label{sec:idempotent}
+
+% @title: Idempotent map
+\begin{definition}\label{def:idempotent}
+A map $p\colon X\to X$ is \emph{idempotent} if $p\circ p=p$.
+\end{definition}
+
+% @title: The image is the fixed-point set
+\begin{lemma}\label{lem:image-fixed}
+Let $p\colon X\to X$ be idempotent in the sense of Definition~\dxref{def:idempotent}.
+Then
+\[
+  \im(p)=\{x\in X\mid p(x)=x\}.
+\]
+\end{lemma}
+\begin{proof}
+\phantomsection\label{prf:image-fixed}
+\proves{prf:image-fixed}{lem:image-fixed}
+If $x=p(y)$ for some $y\in X$, then $p(x)=p(p(y))=p(y)=x$ by Definition~\dxref{def:idempotent}.
+Conversely, if $p(x)=x$, then $x=p(x)\in\im(p)$.
+\end{proof}
+
+\begin{remark}\label{rem:empty-set}
+Lemma~\xref{lem:image-fixed} also applies when $X$ is empty: both sets in its conclusion are empty.
+\end{remark}
+\end{document}
