@@ -57,8 +57,8 @@ scripts/semantex check --release --target LABEL
 Never renew a hash without a new review of changed support.
 Reports live outside fingerprinted candidate/evidence paths to avoid self-referential hashes.
 Each report is itself SHA-256 pinned; modifying it invalidates its recorded review.
-Accepted units need author identity, complete fresh reports, an attached proof where appropriate, accepted prerequisites and no open obligation in selected support.
-Source applications additionally need both retained-source and audit evidence attachments.
+Accepted units need author identity, complete fresh reports, an attached proof where appropriate, and accepted prerequisites.
+Source applications additionally need an exact retained-source citation and a registered hypothesis-matching audit.
 Definitions and proof blocks also need their appropriate reviews when in a release closure; for definitions, review well-formedness rather than asking for a proof of a convention.
 
 The registry format is schema version 1 with `records` keyed by label.

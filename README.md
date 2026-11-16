@@ -1,13 +1,13 @@
 # Math research template
 
-A cloneable workspace for rigorous mathematics, readable LaTeX, locally retained literature, and optional Lean correspondence.
+A cloneable workspace for rigorous mathematics, readable LaTeX, locally retained literature, and searchable mathematical notes.
 The included mathematics is a small, explicitly **unreviewed** demonstration; replace it with your project.
 
 ## Start here
 
-Requirements: Python 3.10+ (standard library only), Git, and a TeX distribution with `latexmk`, `pdflatex`, `bibtex`, `alpha.bst`, `amsmath`, `amsthm`, `amssymb`, `hyperref`, and `subfiles`.
+Requirements: Python 3.10+ (standard library only), Git, and a TeX distribution with `latexmk`, `pdflatex`, `bibtex`, `alpha.bst`, `amsmath`, `amsthm`, `amssymb`, `hyperref`, `aliascnt`, and `subfiles`.
+Poppler validates physical PDF citation pages. Semantic search uses optional local model weights and a llama.cpp runtime.
 Node.js 18+ is needed only for extension development/tests; VS Code runs the installed extension itself.
-Lean is optional and is not downloaded by setup.
 
 ```sh
 git clone git@github.com:pbustillo05/math_template.git my-research
@@ -34,7 +34,6 @@ If starting an independent repository, change `origin` to your own repository be
 | `agents/SEMANTEX.md` | Separate LaTeX/code/annotation contract |
 | `agents/` | Bounded author, proof, counterexample, source and style review protocols |
 | `workflow/` | Current state, queue and review evidence |
-| `lean/` | Optional formalization, correspondence ledger and compiler receipts |
 
 ## Navigate mathematics
 
@@ -53,6 +52,19 @@ Logical arrows point **from the result to its prerequisite**.
 Proof attachments are structural and do not create premise edges.
 Queries rebuild from saved source every time; the parser never executes TeX or infers a proof.
 See [the annotation and CLI guide](agents/SEMANTEX.md).
+
+## Find related mathematics
+
+Lexical search and graph navigation work on a fresh checkout. Follow the [semantic setup guide](agents/SEMANTEX.md#local-semantic-retrieval) for pinned model profiles and runtime setup. Then try:
+
+```sh
+scripts/semantex search "why do projection images consist of fixed points" --mode semantic
+scripts/semantex neighbors lem:image-fixed --scope notes --all-versions --show content
+scripts/semantex links lem:image-fixed
+scripts/semantex context lem:image-fixed --depth 1 --json
+```
+
+The [example topic](notes/example/README.md) includes a separately indexed notes version of the draft lemma. Use the `tex-to-semantex` repository skill to add indexed units from a retained paper without changing the original source.
 
 ## Retain literature
 
@@ -84,7 +96,7 @@ See [extension details](tools/vscode-semantex/README.md).
 
 ## Checks and builds
 
-- `make check`: source graph, reference integrity, Lean marker consistency, structural checks and regression tests. No network.
+- `make check`: source graph, reference integrity, structural checks and regression tests. No network.
 - `make pdf`: compile the main manuscript and standalone section into ignored `build/latex/` with SyncTeX.
 - `make bibliography`: compile `references/cite-all.tex` into `build/latex/references/`.
 - `make graph`: JSON index plus Mermaid and Graphviz diagrams under `build/semantex/`.

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "links": [
+    {
+      "from": "lem:image-fixed",
+      "to": "lem:notes-image-fixed",
+      "relation": "equivalent",
+      "statement_sha256": {
+        "lem:image-fixed": "4094d657a96fe5880a84ae7cfc57122989bf0056eb5cf1b4b9f7971900778356",
+        "lem:notes-image-fixed": "dddc1add631ab40b9639352bb5a81fb57e6ad227224484f594bd83d18cffede3"
+      }
+    }
+  ]
+}

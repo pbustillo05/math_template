@@ -1,0 +1,14 @@
+% A working version of the demonstration lemma.
+\begin{lemma}
+\label[An idempotent self-map has exactly its fixed points in its image.]{lem:notes-image-fixed}
+Let $p\colon X\to X$ satisfy $p\circ p=p$.
+Then $\operatorname{im}(p)=\{x\in X\mid p(x)=x\}$.
+\end{lemma}
+\begin{proof}[
+  label={prf:notes-image-fixed},
+  proves={lem:notes-image-fixed},
+  description={Shows each point in the image is fixed and each fixed point is its own preimage.}
+]
+For $x=p(y)$, the identity $p(p(y))=p(y)$ gives $p(x)=x$.
+For $p(x)=x$, the point $x=p(x)$ lies in the image.
+\end{proof}

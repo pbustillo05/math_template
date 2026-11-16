@@ -5,7 +5,7 @@ const path = require('path');
 const {execFile} = require('child_process');
 
 function labelAt(document, position) {
-    const range = document.getWordRangeAtPosition(position, /[^\s{}\\[\],]+/);
+    const range = document.getWordRangeAtPosition(position, /[^\s{}\\[\],=]+/);
     return range ? {label: document.getText(range), range} : undefined;
 }
 
@@ -127,7 +127,13 @@ function activate(context) {
         await project.ready();
         const token = labelAt(doc, pos);
         const node = token && project.nodes.get(token.label);
-        return node ? {project, token, node} : undefined;
+        if (node) return {project, token, node};
+        const offset = doc.offsetAt(pos);
+        const file = path.relative(project.root, doc.uri.fsPath).split(path.sep).join('/');
+        const citation = project.references.find(ref => ref.relation === 'citation' && ref.file === file &&
+            ref.offset <= offset && offset < ref.end_offset);
+        const source = citation && project.nodes.get(citation.target);
+        return source ? {project, node: source, token: {range: token?.range}} : undefined;
     };
     const selector = [{language: 'latex', scheme: 'file'}, {language: 'tex', scheme: 'file'}];
     context.subscriptions.push(diagnostics, emitter,
@@ -143,6 +149,7 @@ function activate(context) {
             const {node, token} = found;
             const md = new vscode.MarkdownString();
             md.appendText(`${node.id} · ${node.status || 'unreviewed'}${node.virtual ? ' · virtual source label' : ''}\n\n`);
+            if (node.description) md.appendText(node.description + '\n\n');
             md.appendText(`Prerequisites: ${(node.dependencies || []).join(', ') || 'none declared'}\n\n`);
             for (const block of node.blocks || []) {
                 md.appendText(`${block.file}:${block.start_line}–${block.end_line}\n\n`);
@@ -154,8 +161,11 @@ function activate(context) {
         vscode.languages.registerDefinitionProvider(selector, {async provideDefinition(doc, pos) {
             const found = await lookup(doc, pos);
             if (!found) return undefined;
-            return new vscode.Location(vscode.Uri.file(inside(found.project.root, found.node.file)),
-                new vscode.Position(found.node.line - 1, Math.max(0, (found.node.column || 1) - 1)));
+            const uri = vscode.Uri.file(inside(found.project.root, found.node.file));
+            if (found.node.page) {
+                return new vscode.Location(uri.with({fragment: 'page=' + found.node.line}), new vscode.Position(0, 0));
+            }
+            return new vscode.Location(uri, new vscode.Position(found.node.line - 1, Math.max(0, (found.node.column || 1) - 1)));
         }}),
         vscode.languages.registerReferenceProvider(selector, {async provideReferences(doc, pos, options) {
             const found = await lookup(doc, pos);
@@ -180,8 +190,12 @@ function activate(context) {
         vscode.commands.registerCommand('semantex.openUnit', async item => {
             const node = item.project.nodes.get(item.id);
             if (!node) return;
-            await vscode.window.showTextDocument(vscode.Uri.file(inside(item.project.root, node.file)),
-                {selection: new vscode.Range(node.line - 1, 0, node.line - 1, 0)});
+            const uri = vscode.Uri.file(inside(item.project.root, node.file));
+            if (node.page) {
+                await vscode.env.openExternal(uri.with({fragment: 'page=' + node.line}));
+                return;
+            }
+            await vscode.window.showTextDocument(uri, {selection: new vscode.Range(node.line - 1, 0, node.line - 1, 0)});
         }),
         vscode.window.registerTreeDataProvider('semantex.dependencies', {
             onDidChangeTreeData: emitter.event,

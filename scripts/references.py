@@ -225,7 +225,7 @@ def replacements(root, mapping):
     changes = {}
     if not mapping:
         return changes
-    for base in ('draft', 'notes', 'agents', 'workflow', 'lean'):
+    for base in ('draft', 'notes', 'agents', 'workflow'):
         for p in (root / base).rglob('*'):
             if not p.is_file() or p.suffix not in {'.tex', '.md', '.json'} or p.is_symlink():
                 continue

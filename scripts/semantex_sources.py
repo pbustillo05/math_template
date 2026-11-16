@@ -68,14 +68,18 @@ def scan_source(path, root, key, mask, arg):
             frame['labels'].append(label)
             labels.append((label, frame['start'], frame, True))
     references = []
-    for m in re.finditer(r'\\(ref|eqref|autoref|cref|Cref|xref|dxref|hxref|hdxref)\*?\s*\{([^{}]+)\}', text):
+    for m in re.finditer(r'\\(ref|eqref|autoref|cref|Cref|xref|dxref|hxref|hdxref|mention|hiddenmention|use|hiddenuse)\*?\s*\{([^{}]+)\}', text):
         frame = owner(m.start())
         if not frame:
             continue
         for target in m[2].split(','):
+            command = m[1]
             references.append({'owner': key + ':' + frame['labels'][0], 'target': key + ':' + target.strip(),
-                               'dependency': m[1] in {'dxref', 'hdxref'}, 'file': relative,
-                               'line': raw.count('\n', 0, m.start()) + 1})
+                               'dependency': command in {'dxref', 'hdxref', 'use', 'hiddenuse'}, 'file': relative,
+                               'command': command, 'relation': 'reference',
+                               'visible': command not in {'hxref', 'hdxref', 'hiddenmention', 'hiddenuse'},
+                               'line': raw.count('\n', 0, m.start()) + 1,
+                               'column': m.start() - raw.rfind('\n', 0, m.start())})
     records = []
     for label, offset, frame, virtual in labels:
         start, end = (frame['start'], frame['end']) if frame else (offset, text.find('}', offset) + 1)
@@ -92,7 +96,8 @@ def scan_source(path, root, key, mask, arg):
             following = next((f for f in complete if f['environment'] == 'proof' and f['start'] >= end and
                               not text[end:f['start']].strip()), None)
             if following:
-                record['proof'] = {'file': relative, 'start_line': raw.count('\n', 0, following['start']) + 1,
+                record['proof'] = {'id': key + ':' + following['labels'][0],
+                                   'file': relative, 'start_line': raw.count('\n', 0, following['start']) + 1,
                                    'end_line': raw.count('\n', 0, following['end'] - 1) + 1,
                                    'latex': raw[following['start']:following['end']]}
         records.append(record)

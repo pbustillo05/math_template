@@ -30,8 +30,6 @@ def build(root, bibliography=False):
         graph = Graph(root)
         if graph.errors:
             raise ValueError('\n'.join(graph.errors))
-        from lean_status import check
-        check(root)
         sources = []
         for p in sorted((root / 'draft').rglob('*.tex')):
             if '\\documentclass' in p.read_text():

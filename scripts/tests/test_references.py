@@ -92,8 +92,13 @@ class ReferenceTests(unittest.TestCase):
         key = first['key']
         (self.root / 'draft').mkdir()
         authored = self.root / 'draft/claim.tex'
-        authored.write_text('\\cite[\\hxref{' + key + ':thm}]{' + key + '}\nreferences/' + key + '/original.pdf')
-        (self.root / 'references' / key / 'audit/README.md').write_text('See references/' + key + '/original.pdf')
+        authored.write_text(r'\cite[text={A result}, page=1]{' + key + '}\n' +
+                            r'\hiddenuse{ref:' + key + ':main}')
+        audit = self.root / 'references' / key / 'audit'
+        (audit / 'README.md').write_text('See references/' + key + '/original.pdf')
+        locator = f'loc:{key}:references/{key}/original.pdf:1'
+        (audit / 'semantex.json').write_text(json.dumps(
+            {'schema_version': 1, 'units': {f'ref:{key}:main': {'source': locator}}}))
         before = (self.root / 'references' / key / 'original.pdf').read_bytes()
         incoming = self.paper('10.1234/two', 'Z second paper')
         with self.assertRaisesRegex(ValueError, 'collision'):
@@ -105,9 +110,13 @@ class ReferenceTests(unittest.TestCase):
         records = refs.verify(self.root)
         self.assertEqual({r['key'] for r in records}, {'Alp24a', 'Alp24b'})
         migrated = next(r for r in records if r['doi'] == first['doi'])['key']
-        self.assertIn(migrated + ':thm', authored.read_text())
+        self.assertIn(r'\cite[text={A result}, page=1]{' + migrated + '}', authored.read_text())
+        self.assertIn('ref:' + migrated + ':main', authored.read_text())
         self.assertEqual((self.root / 'references' / migrated / 'original.pdf').read_bytes(), before)
         self.assertIn('references/' + migrated + '/', (self.root / 'references' / migrated / 'audit/README.md').read_text())
+        manifest = json.loads((self.root / 'references' / migrated / 'audit/semantex.json').read_text())
+        self.assertEqual(manifest['units'][f'ref:{migrated}:main']['source'],
+                         f'loc:{migrated}:references/{migrated}/original.pdf:1')
         (self.root / 'references' / migrated / 'original.pdf').write_bytes(b'%PDF changed')
         with self.assertRaisesRegex(ValueError, 'retained source'):
             refs.verify(self.root)

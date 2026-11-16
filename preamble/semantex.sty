@@ -1,18 +1,74 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{semantex}[2026/11/14 Invisible research annotations]
-% Hyperref is loaded by research.sty before this package.
-\newcommand{\xref}[1]{\ref{#1}}
-\newcommand{\dxref}[1]{\ref{#1}}
-\newcommand{\hxref}[1]{}
-\newcommand{\hdxref}[1]{}
-\newcommand{\proves}[2]{}
-\newcommand{\evidence}[2]{}
-\newcommand{\sourceat}[3]{}
-\newcommand{\sourcepage}[3]{}
-\newcommand{\leanref}[3]{}
-\newcommand{\sorry}[2]{%
-  \phantomsection\label{#1}%
-  \PackageWarning{semantex}{Unresolved proof obligation: #1}%
-  \par\noindent\textcolor{red}{\textbf{Proof obligation \texttt{\detokenize{#1}}:} #2}\par
+\ProvidesPackage{semantex}[2026/11/16 Mathematical research annotations]
+% Loaded after amsthm and hyperref.
+\ExplSyntaxOn
+\NewCommandCopy \semantex_original_cite \cite
+\NewCommandCopy \semantex_original_proof \proof
+\NewCommandCopy \semantex_original_endproof \endproof
+\NewHook{semantex/cite}
+
+\AddToHook{begindocument/end}{
+  \NewCommandCopy \semantex_original_label \label
+  \RenewDocumentCommand \label { o m } { \semantex_original_label{#2} }
+  \NewCommandCopy \semantex_display_label \label@in@display
+  \RenewDocumentCommand \label@in@display { o m } { \semantex_display_label{#2} }
 }
+
+\NewDocumentCommand \SemanTeXProofTarget { m m } {
+  \cs_gset:cpn { semantex_proof_target_#1 } {#2}
+}
+\cs_new_protected:Npn \semantex_proof_text:n #1 { Proof~of~\autoref*{#1} }
+\cs_new_protected:Npn \semantex_visible_ref:n #1 {
+  \cs_if_exist:cTF { semantex_proof_target_#1 }
+    { \hyperref[#1]{\exp_args:Nv \semantex_proof_text:n {semantex_proof_target_#1}} }
+    { \autoref{#1} }
+}
+\NewDocumentCommand \mention { m } { \semantex_visible_ref:n {#1} }
+\NewDocumentCommand \use { m } { \semantex_visible_ref:n {#1} }
+\NewDocumentCommand \hiddenmention { m } {}
+\NewDocumentCommand \hiddenuse { m } {}
+
+\tl_new:N \l_semantex_proof_label_tl
+\tl_new:N \l_semantex_proof_result_tl
+\tl_new:N \l_semantex_proof_heading_tl
+\keys_define:nn { semantex/proof } {
+  label .tl_set:N = \l_semantex_proof_label_tl,
+  proves .tl_set:N = \l_semantex_proof_result_tl,
+  heading .tl_set:N = \l_semantex_proof_heading_tl,
+  description .code:n = {},
+}
+\RenewDocumentEnvironment{proof}{ O{} } {
+  \tl_clear:N \l_semantex_proof_label_tl
+  \tl_clear:N \l_semantex_proof_result_tl
+  \tl_set:Nn \l_semantex_proof_heading_tl { \proofname }
+  \keys_set:nn { semantex/proof } {#1}
+  \semantex_original_proof[\l_semantex_proof_heading_tl]
+  \tl_if_empty:NF \l_semantex_proof_label_tl {
+    \phantomsection
+    \exp_args:NV \label \l_semantex_proof_label_tl
+    \protected@write\@auxout{}{
+      \string\SemanTeXProofTarget{\l_semantex_proof_label_tl}{\l_semantex_proof_result_tl}
+    }
+  }
+} { \semantex_original_endproof }
+
+\tl_new:N \l_semantex_cite_text_tl
+\keys_define:nn { semantex/cite } {
+  text .tl_set:N = \l_semantex_cite_text_tl,
+  label .code:n = {},
+  file .code:n = {},
+  line .code:n = {},
+  page .code:n = {},
+}
+\RenewDocumentCommand \cite { o m } {
+  \UseHook{semantex/cite}
+  \group_begin:
+  \tl_clear:N \l_semantex_cite_text_tl
+  \IfValueT{#1}{ \keys_set:nn {semantex/cite} {#1} }
+  \tl_if_empty:NTF \l_semantex_cite_text_tl
+    { \semantex_original_cite{#2} }
+    { \semantex_original_cite[\l_semantex_cite_text_tl]{#2} }
+  \group_end:
+}
+\ExplSyntaxOff
 \endinput

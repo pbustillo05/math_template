@@ -72,6 +72,7 @@ A deliberate version replacement requires a separately reviewed migration retain
 
 ## Reading and dependency navigation
 
+Use the `tex-to-semantex` repository skill to create provenance-checked LaTeX overlays and report annotation coverage.
 See `agents/SEMANTEX.md` for exact `\cite` locators and checked local `src:` applications.
 The same CLI retrieves upstream labels in the `KEY:upstream-label` namespace.
 Generated virtual labels and conservative flattening are documented in `REFERENCE-VIEWS.md`.

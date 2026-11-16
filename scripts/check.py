@@ -5,7 +5,6 @@ import re
 import sys
 from manuscript_graph import Graph, masked
 from references import verify
-from lean_status import check as lean_check
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -26,12 +25,11 @@ def check():
             errors.append(f'{label}: accepted review is stale')
     try:
         verify(ROOT)
-        lean_check(ROOT)
     except (ValueError, OSError, KeyError) as error:
         errors.append(str(error))
     if errors:
         raise ValueError('\n'.join(errors))
-    print(f'Checked {len(graph.nodes)} anchors, reference integrity, optional Lean markers and source structure.')
+    print(f'Checked {len(graph.nodes)} anchors, reference integrity and source structure.')
 
 
 if __name__ == '__main__':

@@ -1,30 +1,36 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{research}[2026/11/14 Shared mathematical preamble]
 \RequirePackage[T1]{fontenc}
-\RequirePackage{amsmath,amssymb,amsthm}
+\RequirePackage{amsmath,amssymb,amsthm,aliascnt}
 \RequirePackage{xcolor}
 \RequirePackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \RequirePackage{semantex}
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\ResearchTheorem}[2]{%
+  \newaliascnt{#1}{theorem}%
+  \newtheorem{#1}[#1]{#2}%
+  \aliascntresetthe{#1}%
+  \expandafter\def\csname #1autorefname\endcsname{#2}%
+}
+\ResearchTheorem{lemma}{Lemma}
+\ResearchTheorem{proposition}{Proposition}
+\ResearchTheorem{corollary}{Corollary}
 \theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{convention}[theorem]{Convention}
-\newtheorem{notation}[theorem]{Notation}
-\newtheorem{example}[theorem]{Example}
-\newtheorem{counterexample}[theorem]{Counterexample}
-\newtheorem{conjecture}[theorem]{Conjecture}
+\ResearchTheorem{definition}{Definition}
+\ResearchTheorem{convention}{Convention}
+\ResearchTheorem{notation}{Notation}
+\ResearchTheorem{example}{Example}
+\ResearchTheorem{counterexample}{Counterexample}
+\ResearchTheorem{conjecture}{Conjecture}
 \theoremstyle{remark}
-\newtheorem{remark}[theorem]{Remark}
-\newtheorem{question}[theorem]{Question}
+\ResearchTheorem{remark}{Remark}
+\ResearchTheorem{question}{Question}
 \DeclareMathOperator{\im}{im}
 
 % A section built alone receives the same bibliography as the assembled draft.
 \newif\ifResearchHasCitations
 \newif\ifResearchHasBibliography
-\AddToHook{cmd/cite/before}{\global\ResearchHasCitationstrue}
+\AddToHook{semantex/cite}{\global\ResearchHasCitationstrue}
 \AddToHook{cmd/bibliography/before}{\global\ResearchHasBibliographytrue}
 \AtEndDocument{%
   \ifResearchHasCitations

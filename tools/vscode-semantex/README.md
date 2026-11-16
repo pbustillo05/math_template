@@ -8,7 +8,7 @@ No user-level agent settings are modified and nothing is published to an extensi
 
 Features:
 
-- Label hover displays the exact enclosing LaTeX environment and selected proof, current review status and declared prerequisites.
+- Label hover displays the description, exact enclosing LaTeX environment and selected proof, review status, and declared prerequisites. Structured citations resolve to their exact source destination.
 - F12 / Go to Definition opens the precise source label, including retained upstream labels and deterministic virtual labels.
 - Shift+F12 / Find All References returns incoming local uses and upstream literal references.
 - **SemanTeX: Show Label Dependencies** roots the Explorer tree at the label under the cursor.

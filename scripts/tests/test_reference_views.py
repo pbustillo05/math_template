@@ -2,7 +2,10 @@
 import contextlib
 import io
 import json
+import hashlib
 from pathlib import Path
+import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -82,21 +85,128 @@ class ReferenceViewTests(unittest.TestCase):
                 main(['--root', str(self.root), 'deps', 'P:other', '--json'] + extra)
             self.assertEqual([n['id'] for n in json.loads(out.getvalue())], expected)
 
-    def test_scratch_notes_are_freeform_unless_explicitly_opted_in(self):
+    def test_active_latex_notes_are_indexed(self):
         notes = self.root / 'notes/scratch.tex'
         notes.parent.mkdir()
         notes.write_text(r'\begin{lemma}An incomplete idea.\end{lemma}')
-        self.assertEqual(Graph(self.root).errors, [])
-        notes.write_text('% semantex: on\n' + notes.read_text())
         self.assertTrue(any('unlabelled' in e for e in Graph(self.root).errors))
+        notes.write_text(r'\begin{lemma}\label[A candidate assertion.]{lem:idea}An incomplete idea.\end{lemma}')
+        self.assertIn('lem:idea', Graph(self.root).nodes)
 
     def test_unsaved_overlay_retrieval_uses_new_text_without_writing_source(self):
         draft = self.root / 'draft/test.tex'
         draft.parent.mkdir()
-        draft.write_text('\\begin{definition}\\label{def:x}Saved.\\end{definition}')
-        graph = Graph(self.root, {'draft/test.tex': '\\begin{definition}\\label{def:x}Unsaved.\\end{definition}'})
+        draft.write_text('\\begin{definition}\\label[A fixture definition.]{def:x}Saved.\\end{definition}')
+        graph = Graph(self.root, {'draft/test.tex': '\\begin{definition}\\label[A fixture definition.]{def:x}Unsaved.\\end{definition}'})
         self.assertIn('Unsaved.', graph.source('def:x'))
         self.assertIn('Saved.', draft.read_text())
+
+    def test_overlay_locators_and_exact_original_are_distinct(self):
+        audit = self.paper / "audit"
+        audit.mkdir()
+        original = self.paper / "claims.tex"
+        digest = hashlib.sha256(original.read_bytes()).hexdigest()
+        record = {"representation": "restatement", "coverage": "statement",
+                  "dependencies": "partial", "source_sha256": digest}
+        manifest = audit / "semantex.json"
+        manifest.write_text(json.dumps({"schema_version": 1, "units": {"ref:P:claim": record}}))
+        (audit / "units.tex").write_text(r"\begin{theorem}\label[A statement from the paper.]{ref:P:claim}"
+                                        r"Restated claim. \cite[text={Theorem 1}, label={claim}]{P}\end{theorem}")
+        graph = Graph(self.root)
+        self.assertEqual(graph.errors, [])
+        self.assertEqual(graph.nodes["ref:P:claim"]["provenance"]["id"], "P:claim")
+        self.assertIn("Statement.", graph.blocks("P:claim")[0]["latex"])
+        self.assertIn("Restated claim.", graph.blocks("ref:P:claim")[0]["latex"])
+        with contextlib.redirect_stdout(io.StringIO()) as out:
+            main(["--root", str(self.root), "locate", "ref:P:claim", "--json"])
+        self.assertEqual(json.loads(out.getvalue())["origin"]["file"], "references/P/claims.tex")
+        original.write_text(original.read_text() + "\n% modified payload")
+        self.assertIn("origin hash differs", "\n".join(Graph(self.root).errors))
+
+    @unittest.skipUnless(shutil.which("pdflatex") and shutil.which("pdfinfo"), "TeX and Poppler required")
+    def test_pdf_only_overlay_resolves_physical_page(self):
+        generation = self.root / "build"
+        generation.mkdir()
+        (generation / "original.tex").write_text(r"\documentclass{article}\begin{document}"
+                                                  r"Fixture first page.\newpage Printed locator. \end{document}")
+        subprocess.run(["pdflatex", "-interaction=batchmode", "-halt-on-error", "original.tex"],
+                       cwd=generation, check=True, stdout=subprocess.DEVNULL)
+        pdf_dir = self.root / "references/PDF"
+        audit = pdf_dir / "audit"
+        audit.mkdir(parents=True)
+        pdf = pdf_dir / "original.pdf"
+        shutil.copyfile(generation / "original.pdf", pdf)
+        digest = hashlib.sha256(pdf.read_bytes()).hexdigest()
+        overlay = audit / "units.tex"
+        overlay.write_text(r"\begin{definition}\label[A PDF-only unit.]{ref:PDF:unit}"
+                           r"Transcribed. \cite[text={Printed locator}, page=2]{PDF}\end{definition}")
+        (audit / "semantex.json").write_text(json.dumps({"schema_version": 1, "units": {
+            "ref:PDF:unit": {"source_sha256": digest, "representation": "transcription",
+                             "coverage": "statement", "dependencies": "partial"},
+        }}))
+        with contextlib.redirect_stdout(io.StringIO()) as out:
+            main(["--root", str(self.root), "locate", "ref:PDF:unit", "--json"])
+        self.assertTrue(json.loads(out.getvalue())["origin"]["url"].endswith("original.pdf#page=2"))
+        self.assertEqual(hashlib.sha256(pdf.read_bytes()).hexdigest(), digest)
+        overlay.write_text(overlay.read_text().replace("page=2", "page=3"))
+        self.assertIn("physical page out of range", "\n".join(Graph(self.root).errors))
+
+    def test_promotion_uses_checked_application_of_retained_result(self):
+        original = self.paper / "claims.tex"
+        original.write_text(r"\begin{definition}\label{idempotent}A self-map $p$ is idempotent if $p^2=p$.\end{definition}"
+                            "\n" r"\begin{lemma}\label{fixed}For $p$ idempotent, $p(x)$ is fixed by $p$.\end{lemma}"
+                            "\n" r"\begin{proof}By \ref{idempotent}, $p(p(x))=p(x)$.\end{proof}")
+        digest = hashlib.sha256(original.read_bytes()).hexdigest()
+        audit = self.paper / "audit"
+        audit.mkdir()
+        (audit / "support.md").write_text(
+            "The retained lemma assumes a self-map with p²=p. We set p(x)=r(x) and apply it to every x.")
+        (audit / "units.tex").write_text(r"\begin{lemma}\label[An idempotent map fixes its values.]{ref:P:fixed}"
+                                        r"Every value of an idempotent self-map is fixed. \cite[label={fixed}]{P}\end{lemma}"
+                                        "\n" r"\begin{proof}[label={prf:ref:P:fixed}, proves={ref:P:fixed},"
+                                        r" description={Evaluates the idempotent identity at x.}]"
+                                        r"Use \hiddenuse{P:idempotent}; $p(p(x))=p(x)$.\end{proof}")
+        manifest = audit / "semantex.json"
+        manifest.write_text(json.dumps({"schema_version": 1, "units": {
+            "ref:P:fixed": {"representation": "restatement", "coverage": "statement-and-proof",
+                            "dependencies": "inspected", "source_sha256": digest},
+        }}))
+        candidate = r"""\begin{lemma}\label[The range of a retraction lies in its fixed points.]{lem:range}
+Let $r\colon X\to X$ satisfy $r^2=r$. If $y=r(x)$, then $r(y)=y$.
+\end{lemma}
+\begin{proof}[label={prf:range}, proves={lem:range}, description={Applies the retained lemma to r.}]
+Apply the fixed-value result \hiddenuse{ref:P:fixed} to $r$.
+\end{proof}
+"""
+        notes = self.root / "notes/range.tex"
+        notes.parent.mkdir()
+        notes.write_text(candidate)
+        graph = Graph(self.root)
+        self.assertEqual(graph.errors, [])
+        self.assertEqual(graph.why("lem:range", "P:idempotent")["path"],
+                         ["lem:range", "ref:P:fixed", "P:idempotent"])
+        self.assertEqual(graph.blocks("ref:P:fixed")[1]["id"], "prf:ref:P:fixed")
+        draft = self.root / "draft/main.tex"
+        draft.parent.mkdir()
+        notes.rename(draft)
+        self.assertIn("ref:P:fixed: manuscript support", "\n".join(Graph(self.root).release_errors("lem:range")))
+        application = r"""\begin{remark}\label[Applies the published fixed-value result to the map r.]{src:range}
+The map $r$ is an idempotent self-map, so every value $r(x)$ is fixed \cite[text={Lemma 1}, label={fixed}]{P}.
+\end{remark}
+"""
+        draft.write_text(application + candidate.replace("ref:P:fixed", "src:range"))
+        metadata = json.loads(manifest.read_text())
+        metadata["applications"] = {"src:range": "support.md"}
+        manifest.write_text(json.dumps(metadata))
+        graph = Graph(self.root)
+        self.assertEqual(graph.errors, [])
+        self.assertEqual(graph.nodes["lem:range"]["scope"], "draft")
+        self.assertEqual(graph.why("lem:range", "src:range")["path"], ["lem:range", "src:range"])
+        self.assertTrue(all("current acceptance" in error for error in graph.release_errors("lem:range")))
+        with contextlib.redirect_stdout(io.StringIO()) as out:
+            main(["--root", str(self.root), "context", "lem:range", "--json"])
+        self.assertEqual({unit["id"] for unit in json.loads(out.getvalue())["units"]}, {"lem:range", "src:range"})
+        self.assertEqual(hashlib.sha256(original.read_bytes()).hexdigest(), digest)
 
 
 if __name__ == '__main__':

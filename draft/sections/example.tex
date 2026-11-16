@@ -3,26 +3,28 @@
 \section{Idempotent maps}\label{sec:idempotent}
 
 % @title: Idempotent map
-\begin{definition}\label{def:idempotent}
+\begin{definition}\label[An idempotent self-map equals its own composite.]{def:idempotent}
 A map $p\colon X\to X$ is \emph{idempotent} if $p\circ p=p$.
 \end{definition}
 
 % @title: The image is the fixed-point set
-\begin{lemma}\label{lem:image-fixed}
-Let $p\colon X\to X$ be idempotent in the sense of Definition~\dxref{def:idempotent}.
+\begin{lemma}\label[The image of an idempotent map equals its fixed-point set.]{lem:image-fixed}
+Let $p\colon X\to X$ be idempotent in the sense of \use{def:idempotent}.
 Then
 \[
   \im(p)=\{x\in X\mid p(x)=x\}.
 \]
 \end{lemma}
-\begin{proof}
-\phantomsection\label{prf:image-fixed}
-\proves{prf:image-fixed}{lem:image-fixed}
-If $x=p(y)$ for some $y\in X$, then $p(x)=p(p(y))=p(y)=x$ by Definition~\dxref{def:idempotent}.
+\begin{proof}[
+  label={prf:image-fixed},
+  proves={lem:image-fixed},
+  description={Applies idempotence to image points and writes fixed points as their own images.}
+]
+If $x=p(y)$ for some $y\in X$, then $p(x)=p(p(y))=p(y)=x$ by \use{def:idempotent}.
 Conversely, if $p(x)=x$, then $x=p(x)\in\im(p)$.
 \end{proof}
 
-\begin{remark}\label{rem:empty-set}
-Lemma~\xref{lem:image-fixed} also applies when $X$ is empty: both sets in its conclusion are empty.
+\begin{remark}\label[The image and fixed-point sets are empty on the empty domain.]{rem:empty-set}
+\mention{lem:image-fixed} also applies when $X$ is empty: both sets in its conclusion are empty.
 \end{remark}
 \end{document}
