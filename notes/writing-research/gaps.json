@@ -1,0 +1,942 @@
+{
+  "survey_date": "2026-11-15",
+  "scope": "Local survey acquisition/reading gaps. Project references/ remains untouched; no surveyed theorem is adopted as a premise. See individual source cards for additional reading and access gaps.",
+  "candidates": [
+    {
+      "source_id": "H01",
+      "title": "Paul R. Halmos, *How to Write Mathematics*",
+      "url": "https://i11www.iti.kit.edu/~awolff/lehre/scientific_writing/h-hwm-70.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H02",
+      "title": "Donald E. Knuth, Tracy Larrabee, Paul M. Roberts, *Mathematical Writing*",
+      "url": "https://www-cs-faculty.stanford.edu/~knuth/klr.html",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H03",
+      "title": "Bjorn Poonen, *Practical Suggestions for Mathematical Writing*",
+      "url": "https://math.mit.edu/~poonen/papers/writing.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H04",
+      "title": "Renee Bell, Borys Kadets, Padmavathi Srinivasan, Nicholas Triantafillou, Isabel Vogt, *Practical Suggestions for Mathematical Writing*",
+      "url": "https://ngtriant.github.io/notes/practical_suggestions_for_mathematical_writing.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H05",
+      "title": "Igor Pak, *How to Write a Clear Math Paper: Some 21st Century Tips*",
+      "url": "https://www.math.ucla.edu/~pak/papers/how-to-write1.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H06",
+      "title": "Clark Barwick, *Notes on Mathematical Writing*",
+      "url": "https://bimsa.net/activity/MathematicalCommunication/files/Clark%20Barwick%20--%20Notes%20on%20mathematical%20writing.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H07",
+      "title": "Michèle Audin, *Écrire des mathématiques* / *Conseils aux auteurs de textes mathématiques*",
+      "url": "https://audin.pages.math.unistra.fr/autresarticles.html",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H08",
+      "title": "David Goss, *Some Hints on Mathematical Style*",
+      "url": "https://www.cnsr.ictas.vt.edu/mentoring/Goss.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H09",
+      "title": "Nicholas J. Higham, *Handbook of Writing for the Mathematical Sciences*",
+      "url": "https://epubs.siam.org/doi/book/10.1137/1.9781611976106",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H10",
+      "title": "Steven G. Krantz, *A Primer of Mathematical Writing*, second edition",
+      "url": "https://arxiv.org/abs/1612.04888v1",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H11",
+      "title": "Douglas B. West, *The Grammar According to West*",
+      "url": "https://mail.dwest.web.illinois.edu/grammar.html",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H12",
+      "title": "Andrea Bertozzi, *Advice for Writing Research Papers and Dissertations*",
+      "url": "https://www.math.ucla.edu/~bertozzi/advice-papers.html",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H13",
+      "title": "Bruce C. Berndt, *How to Write Mathematical Papers*",
+      "url": "https://berndt.web.illinois.edu/writingmath.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H14",
+      "title": "Oded Goldreich, *How to Write a Paper*",
+      "url": "https://www.wisdom.weizmann.ac.il/~oded/writing.html",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H15",
+      "title": "Steven L. Kleiman, with Glenn P. Tesler, *Writing a Math Phase Two Paper*",
+      "url": "https://ocw.mit.edu/courses/18-704-seminar-in-algebra-and-number-theory-computational-commutative-algebra-and-algebraic-geometry-fall-2008/resources/piiujm2-1/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H16",
+      "title": "Ashley Reiter, *Writing a Research Paper in Mathematics* (12 September 1995)",
+      "url": "https://web.mit.edu/jrickert/www/mathadvice.html",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H17",
+      "title": "Boris Khesin, *Suggestions on Better Writing Math Texts*",
+      "url": "https://www.math.utoronto.ca/khesin/biblio/better_writing.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H18",
+      "title": "Leonard Gillman, *Writing Mathematics Well: A Manual for Authors*; appendix, *The Use of Symbols: A Case Study*",
+      "url": "https://mathcomm.org/folder/the-use-of-symbols-a-case-study/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H19",
+      "title": "Terence Tao, *On Writing*",
+      "url": "https://terrytao.wordpress.com/advice-on-writing-papers/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H20",
+      "title": "Tao, *Take Advantage of the English Language*",
+      "url": "https://terrytao.wordpress.com/advice-on-writing-papers/take-advantage-of-the-english-language/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H21",
+      "title": "Tao, *Give Appropriate Amounts of Detail*",
+      "url": "https://terrytao.wordpress.com/advice-on-writing-papers/give-appropriate-amounts-of-detail/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H22",
+      "title": "Tao, *Create Lemmas*",
+      "url": "https://terrytao.wordpress.com/advice-on-writing-papers/create-lemmas/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H23",
+      "title": "Tao, *Motivate the Paper*",
+      "url": "https://terrytao.wordpress.com/advice-on-writing-papers/motivate-the-paper/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H24",
+      "title": "Tao, *Organise the Paper*",
+      "url": "https://terrytao.wordpress.com/advice-on-writing-papers/organise-the-paper/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H25",
+      "title": "Tao, *Describe the Results Accurately*",
+      "url": "https://terrytao.wordpress.com/advice-on-writing-papers/describe-the-results-accurately/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H26",
+      "title": "Tao, *Write a Rapid Prototype First*",
+      "url": "https://terrytao.wordpress.com/advice-on-writing-papers/write-a-rapid-prototype-first/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H27",
+      "title": "Tao, *Don't Overoptimise*",
+      "url": "https://terrytao.wordpress.com/advice-on-writing-papers/dont-overoptimise/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H28",
+      "title": "Timothy Gowers, *My Favourite Pedagogical Principle: Examples First!* (2007)",
+      "url": "https://gowers.wordpress.com/2007/10/19/my-favourite-pedagogical-principle-examples-first/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H29",
+      "title": "Jean-Pierre Serre, *How to Write Mathematics Badly*, Harvard Basic Notions lecture (2003)",
+      "url": "https://bpb-us-w2.wpmucdn.com/web.sas.upenn.edu/dist/0/713/files/2025/05/How_to_write_mathematics_badly__transcript_.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H30",
+      "title": "J. S. Milne, *Tips for Authors*",
+      "url": "https://www.jmilne.org/math/tips.html",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H31",
+      "title": "Jonathan Richard Shewchuk, *Three Sins of Authors in Computer Science and Math* (1997)",
+      "url": "https://www.cs.cmu.edu/~jrs/sins.html",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H32",
+      "title": "Dimitri Bertsekas, *Ten Simple Rules for Mathematical Writing*",
+      "url": "https://faculty.engineering.asu.edu/bertsekas/ten-simple-rules-for-mathematical-writing/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H33",
+      "title": "John N. Tsitsiklis, *A Few Tips on Writing Papers with Mathematical Content* (December 2020)",
+      "url": "https://www.mit.edu/~jnt/write.html",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H34",
+      "title": "Jerzy Trzeciak, *Writing Mathematical Papers in English: A Practical Guide*",
+      "url": "https://ems.press/books/standalone/11",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H35",
+      "title": "Francis Edward Su, *Guidelines for Good Mathematical Writing*",
+      "url": "https://math.hmc.edu/su/writing-math-well/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H36",
+      "title": "Keith Conrad, *Advice on Mathematical Writing*",
+      "url": "https://kconrad.math.uconn.edu/blurbs/proofs/writingtips.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "H37",
+      "title": "Tao, *Use Good Notation*",
+      "url": "https://terrytao.wordpress.com/advice-on-writing-papers/use-good-notation/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S01",
+      "title": "Amélie Loher, `latex-math-writing/SKILL.md`",
+      "url": "https://github.com/amelieloher/math-paper-skills/blob/main/skills/latex-math-writing/SKILL.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S02",
+      "title": "Loher, `references/writing-rules.md`",
+      "url": "https://raw.githubusercontent.com/amelieloher/math-paper-skills/main/skills/latex-math-writing/references/writing-rules.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S03",
+      "title": "Loher, `references/artisan-writing.md`",
+      "url": "https://raw.githubusercontent.com/amelieloher/math-paper-skills/main/skills/latex-math-writing/references/artisan-writing.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S04",
+      "title": "Loher, `math-paper-campaign/SKILL.md`",
+      "url": "https://raw.githubusercontent.com/amelieloher/math-paper-skills/main/skills/math-paper-campaign/SKILL.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S05",
+      "title": "Loher, `shared-controls.md`",
+      "url": "https://raw.githubusercontent.com/amelieloher/math-paper-skills/main/skills/math-paper-campaign/references/shared-controls.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S06",
+      "title": "Loher, `route-polish.md`",
+      "url": "https://raw.githubusercontent.com/amelieloher/math-paper-skills/main/skills/math-paper-campaign/references/route-polish.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S07",
+      "title": "Haruhisa Enomoto, `write-research-paper/SKILL.md`",
+      "url": "https://raw.githubusercontent.com/haruhisa-enomoto/math-paper-skills/main/skills/write-research-paper/SKILL.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S08",
+      "title": "Enomoto, `read-research-paper/SKILL.md`",
+      "url": "https://raw.githubusercontent.com/haruhisa-enomoto/math-paper-skills/main/skills/read-research-paper/SKILL.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S09",
+      "title": "Enomoto, `polish-math-prose/SKILL.md`",
+      "url": "https://raw.githubusercontent.com/haruhisa-enomoto/math-paper-skills/main/skills/polish-math-prose/SKILL.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S10",
+      "title": "Enomoto, mathematical exposition standard",
+      "url": "https://raw.githubusercontent.com/haruhisa-enomoto/math-paper-skills/main/skills/write-research-paper/references/exposition-standard.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S11",
+      "title": "Enomoto, AI mathematical prose anti-patterns",
+      "url": "https://raw.githubusercontent.com/haruhisa-enomoto/math-paper-skills/main/skills/polish-math-prose/references/anti-patterns.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S12",
+      "title": "Enomoto, continuous first-reader protocol",
+      "url": "https://raw.githubusercontent.com/haruhisa-enomoto/math-paper-skills/main/skills/read-research-paper/references/first-reader-review.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S13",
+      "title": "Yoshito Ishiki, `write-research-paper/SKILL.md`",
+      "url": "https://raw.githubusercontent.com/yoshito-ishiki-math/math-paper-skills/main/skills/write-research-paper/SKILL.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S14",
+      "title": "Ishiki, independent reader",
+      "url": "https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/skills/read-research-paper/SKILL.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S15",
+      "title": "Ishiki, optional `examples/author-style.md`",
+      "url": "https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/examples/author-style.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S16",
+      "title": "Ishiki, public research harness overview",
+      "url": "https://yoshito-ishiki-math.github.io/research-tools.html",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S17",
+      "title": "JiahaoLi-creator, `mathematical-academic-writing`",
+      "url": "https://raw.githubusercontent.com/JiahaoLi-creator/mathematical-academic-writing/main/SKILL.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S18",
+      "title": "TianhuaGao, `math-prose`",
+      "url": "https://raw.githubusercontent.com/TianhuaGao/math-prose/main/SKILL.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S19",
+      "title": "VeryMath, `AI4Math-Writing/paper-writing`",
+      "url": "https://raw.githubusercontent.com/VeryMath/AI4Math-Writing/main/skills/paper-writing/SKILL.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S20",
+      "title": "mmogib, `math-research-writer`",
+      "url": "https://raw.githubusercontent.com/mmogib/research-toolkit/main/skills/math-research-writer/SKILL.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S21",
+      "title": "fcescob, `terence-tao-skills/mathematical-writing`",
+      "url": "https://raw.githubusercontent.com/fcescob/terence-tao-skills/main/skills/mathematical-writing/SKILL.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S22",
+      "title": "K-Dense-AI, pure-mathematician `AGENTS.md`",
+      "url": "https://raw.githubusercontent.com/K-Dense-AI/scientific-agents/main/scientific-agents/pure-mathematician/AGENTS.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S23",
+      "title": "mathcommunity, `oai-math-revised/AGENTS.md`",
+      "url": "https://github.com/mathcommunity/oai-math-revised/blob/main/AGENTS.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "S24",
+      "title": "txmy, `ultra-mathematician/AGENTS.md`",
+      "url": "https://raw.githubusercontent.com/txmy/ultra-mathematician/main/AGENTS.md",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A01",
+      "title": "D’Arcy, Hope, Birnbaum, Downey: *MARG: Multi-Agent Review Generation for Scientific Papers* (2024)",
+      "url": "https://arxiv.org/html/2401.04259v1",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A02",
+      "title": "Liang et al.: *Can Large Language Models Provide Useful Feedback on Research Papers? A Large-Scale Empirical Analysis* (2023 preprint; 2024 journal publication)",
+      "url": "https://arxiv.org/html/2310.01783v1",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A03",
+      "title": "Chamoun, Schlichtkrull, Vlachos: *Automated Focused Feedback Generation for Scientific Writing Assistance* (ACL Findings 2024)",
+      "url": "https://aclanthology.org/2024.findings-acl.580/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A04",
+      "title": "Lu et al.: *Agent Reviewers: Domain-specific Multimodal Agents with Shared Memory for Paper Review* (ICML 2025)",
+      "url": "https://proceedings.mlr.press/v267/lu25p.html",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A05",
+      "title": "Hou, Lin, Chen, Gong, He: *PaperDebugger: A Plugin-Based Multi-Agent System for In-Editor Academic Writing, Review, and Editing* (WWW Companion 2026)",
+      "url": "https://arxiv.org/html/2512.02589v2",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A06",
+      "title": "Chen et al.: *XtraGPT: Context-Aware and Controllable Academic Paper Revision via Human-AI Collaboration* (inspected 2026 revision)",
+      "url": "https://arxiv.org/html/2505.11336v4",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A07",
+      "title": "Zhao et al.: *APRES: An Agentic Paper Revision and Evaluation System* (2026)",
+      "url": "https://arxiv.org/html/2603.03142v1",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A08",
+      "title": "Goyal et al.: *ScholarPeer: A Multi-Agent Framework for Automated Peer Review* (2026 revision)",
+      "url": "https://arxiv.org/html/2601.22638v2",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A09",
+      "title": "Zhou et al.: *Discuss More, Comment Less: Boosting Automated Research via Multi-Perspective Collaborative Review* (October 2026)",
+      "url": "https://arxiv.org/html/2610.24050v1",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A10",
+      "title": "Benharrak, Zindulka, Lehmann, Heuer, Buschek: *Writer-Defined AI Personas for On-Demand Feedback Generation* (CHI 2024)",
+      "url": "https://arxiv.org/html/2309.10433v2",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A11",
+      "title": "Madaan et al.: *Self-Refine: Iterative Refinement with Self-Feedback* (NeurIPS 2023)",
+      "url": "https://arxiv.org/html/2303.17651v2",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A12",
+      "title": "Shinn et al.: *Reflexion: Language Agents with Verbal Reinforcement Learning* (NeurIPS 2023)",
+      "url": "https://arxiv.org/html/2303.11366v4",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A13",
+      "title": "Bai et al.: *Constitutional AI: Harmlessness from AI Feedback* (2022)",
+      "url": "https://arxiv.org/html/2212.08073v1",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A14",
+      "title": "Shao et al.: *Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models* / STORM (NAACL 2024)",
+      "url": "https://aclanthology.org/2024.naacl-long.347/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A15",
+      "title": "Jiang et al.: *Into the Unknown Unknowns: Engaged Human Learning through Participation in Language Model Agent Conversations* / Co-STORM (EMNLP 2024)",
+      "url": "https://aclanthology.org/2024.emnlp-main.554/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A16",
+      "title": "Huang et al.: *Large Language Models Cannot Self-Correct Reasoning Yet* (ICLR 2024)",
+      "url": "https://arxiv.org/html/2310.01798v2",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A17",
+      "title": "Tyen, Mansoor, Carbune, Chen, Mak: *LLMs Cannot Find Reasoning Errors, but Can Correct Them Given the Error Location* (ACL Findings 2024)",
+      "url": "https://aclanthology.org/2024.findings-acl.826/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A18",
+      "title": "Gou et al.: *CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing* (ICLR 2024)",
+      "url": "https://arxiv.org/html/2305.11738v4",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A19",
+      "title": "Kamoi et al.: *When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs* (TACL 2024)",
+      "url": "https://arxiv.org/html/2406.01297v3",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A20",
+      "title": "Du, Li, Torralba, Tenenbaum, Mordatch: *Improving Factuality and Reasoning in Language Models through Multiagent Debate* (2023 preprint; ICML 2024)",
+      "url": "https://arxiv.org/html/2305.14325v1",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A21",
+      "title": "Zhu et al.: *Demystifying Multi-Agent Debate: The Role of Confidence and Diversity* (2026)",
+      "url": "https://arxiv.org/html/2601.19921v3",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A22",
+      "title": "Zheng et al.: *When “A Helpful Assistant” Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models* (EMNLP Findings 2024)",
+      "url": "https://arxiv.org/html/2311.10054v3",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A23",
+      "title": "Luz de Araujo, Röttger, Hovy, Roth: *Principled Personas: Defining and Measuring the Intended Effects of Persona Prompting on Task Performance* (EMNLP 2025)",
+      "url": "https://aclanthology.org/2025.emnlp-main.1364/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A24",
+      "title": "Zheng et al.: *Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena* (NeurIPS 2023)",
+      "url": "https://arxiv.org/html/2306.05685v4",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A25",
+      "title": "Petrov, Dekoninck, Dimitrov, Vechev: *Not All Proofs Are Equal: Evaluating LLM Proof Quality Beyond Correctness* / ProofRank (2026)",
+      "url": "https://arxiv.org/html/2605.10379v3",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "A26",
+      "title": "Gonzalez et al.: *QEDBench: Quantifying the Alignment Gap in Automated Evaluation of University-Level Mathematical Proofs* (2026)",
+      "url": "https://arxiv.org/html/2602.20629v3",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E01",
+      "title": "Ravi Vakil, *The Mathematics of Doodling* (2011)",
+      "url": "https://math.stanford.edu/~vakil/files/monthly116-129-vakil.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E02",
+      "title": "Robert Ghrist, *Barcodes: The Persistent Topology of Data* (2008)",
+      "url": "https://www2.math.upenn.edu/~ghrist/preprints/barcodes.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E03",
+      "title": "Bjorn Poonen, *Undecidability in Number Theory* (2008)",
+      "url": "https://math.uchicago.edu/~shmuel/lg-readings/Poonen.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E04",
+      "title": "Tom Leinster, *Rethinking Set Theory* (2014; preprint 2012)",
+      "url": "https://arxiv.org/abs/1212.6543v1",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E05",
+      "title": "Jordan S. Ellenberg, *Geometry, Inference, Complexity, and Democracy* (2021)",
+      "url": "https://arxiv.org/abs/2006.10879v1",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E06",
+      "title": "Andrew Granville, *It Is Easy to Determine Whether a Given Integer Is Prime* (2005)",
+      "url": "https://wstein.org/129-05/refs/Granville-It_is_easy_to_determine_whether_a_given_integer_is_prime.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E07",
+      "title": "John Milnor, *Analytic Proofs of the “Hairy Ball Theorem” and the Brouwer Fixed Point Theorem* (1978)",
+      "url": "https://web.math.utk.edu/~freire/teaching/m462s20/hairy-ball.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E08",
+      "title": "John Milnor, *Classification of (n−1)-Connected 2n-Dimensional Manifolds and the Discovery of Exotic Spheres*",
+      "url": "https://www.maths.ed.ac.uk/~v1ranick/papers/milnor.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E09",
+      "title": "Vladimir Pozdnyakov and J. Michael Steele, *Buses, Bullies, and Bijections* (2016)",
+      "url": "https://vladimir-pozdnyakov.github.io/papers/BBB.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E10",
+      "title": "The Stacks Project, *Categories*, §4.2, “Definitions”",
+      "url": "https://stacks.math.columbia.edu/tag/0013",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E11",
+      "title": "Jacob Lurie, *Kerodon*, Chapter 1, “The Language of ∞-Categories”",
+      "url": "https://kerodon.net/tag/0001",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E12",
+      "title": "Ravi Vakil, *The Rising Sea: Foundations of Algebraic Geometry*, November 18, 2017 draft",
+      "url": "https://math.stanford.edu/~vakil/216blog/FOAGnov1817public.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E13",
+      "title": "Geordie Williamson, *Is Deep Learning a Useful Tool for the Pure Mathematician?* (2024; preprint v2, 2023)",
+      "url": "https://arxiv.org/abs/2304.12602v2",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E14",
+      "title": "Allen Hatcher, *Algebraic Topology*, Chapter 0 (book, 2002)",
+      "url": "https://pi.math.cornell.edu/~hatcher/AT/ATch0.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E15",
+      "title": "William P. Thurston, *On Proof and Progress in Mathematics* (1994)",
+      "url": "https://arxiv.org/abs/math/9404236v1",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E16",
+      "title": "Jean-Pierre Serre, *Faisceaux algébriques cohérents* (FAC, 1955)",
+      "url": "https://www.college-de-france.fr/sites/default/files/media/document/2023-11/Jean-Pierre%20Serre_Faisceaux%20alg%C3%A9briques%20coh%C3%A9rents.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E17",
+      "title": "Jean-Pierre Serre, *Géométrie algébrique et géométrie analytique* (GAGA, 1956)",
+      "url": "https://www.numdam.org/article/AIF_1956__6__1_0.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E18",
+      "title": "John Milnor, *Morse Theory* (1963), based on notes by Michael Spivak and Robert Wells",
+      "url": "https://math.stanford.edu/~ralph/math215b/Milnor.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E19",
+      "title": "John Milnor, *Topology from the Differentiable Viewpoint* (1965), based on notes by David Weaver",
+      "url": "https://people.dm.unipi.it/benedett/MILNOR-TDVPOINT.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E20",
+      "title": "Michael Atiyah and Raoul Bott, *The Yang–Mills Equations over Riemann Surfaces* (1983)",
+      "url": "https://metaphor.ethz.ch/x/2025/hs/401-3005-00L/texts/classic/atiyah_bott_1997_yang_mills.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E21",
+      "title": "Robin Hartshorne, *Algebraic Geometry* (1977)",
+      "url": "https://link.springer.com/book/10.1007/978-1-4757-3849-0",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "E22",
+      "title": "Robin Hartshorne, *Equivalence Relations on Algebraic Cycles and Subvarieties of Small Codimension* (1975)",
+      "url": "https://doi.org/10.1090/pspum/029",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "R01",
+      "title": "Mathematical Association of America, *Guide for Referees*",
+      "url": "https://maa.org/guide-for-referees/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "R02",
+      "title": "MAA, *Referee's Report: Title of Paper* (Mathematics Magazine template)",
+      "url": "https://maa.org/wp-content/uploads/2024/06/Referee-Report-Template.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "R03",
+      "title": "SIAM Journal on Mathematics of Data Science, *Instructions for Referees*",
+      "url": "https://epubs.siam.org/simods/instructions-for-referees",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "R04",
+      "title": "European Mathematical Society, *Code of Practice for Mathematical Publication* (approved March 19, 2025)",
+      "url": "https://euromathsoc.org/code-of-practice",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "R05",
+      "title": "London Mathematical Society, *Ethical Policy for Journals* (updated October 2026)",
+      "url": "https://www.lms.ac.uk/publications/policies/ethicalpolicy",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "R06",
+      "title": "Illinois Journal of Mathematics, *Review Process*",
+      "url": "https://ijm.math.illinois.edu/review-process/",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "R07",
+      "title": "London Mathematical Society, *Guide to Authors*",
+      "url": "https://www.lms.ac.uk/sites/lms.ac.uk/files/Publications/AuthorGuide.pdf",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    },
+    {
+      "source_id": "R08",
+      "title": "Jeroen Hanselman, *Guidelines for Writing and Reviewing Software in Computer Algebra* (2025)",
+      "url": "https://arxiv.org/abs/2503.01541v1",
+      "status": "not-acquired",
+      "reason": "Survey retains original summaries and source links; exact upstream TeX/PDF and DOI API records have not been acquired.",
+      "next_action": "If promoting into a formal retained corpus, resolve identity/version, obtain exact TeX or original PDF, retain DOI API response where available, assign actual alpha key, hash payload and add source-specific audit."
+    }
+  ]
+}

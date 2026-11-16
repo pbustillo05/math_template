@@ -1,0 +1,1368 @@
+{
+  "survey_date": "2026-11-15",
+  "description": "Discovery index, not a DOI-API bibliography or retained source corpus. URLs extracted from cards; access limits are recorded in the linked surveys. Related artifacts and editions are separate cards, not independent authorities.",
+  "records": [
+    {
+      "id": "H01",
+      "category": "human-writing",
+      "title": "Paul R. Halmos, *How to Write Mathematics*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://i11www.iti.kit.edu/~awolff/lehre/scientific_writing/h-hwm-70.pdf",
+        "https://www.jeffreyheinz.net/classes/22F/materials/Halmos1973-How-to-write-mathematics.pdf",
+        "https://doi.org/10.5169/seals-43857"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H02",
+      "category": "human-writing",
+      "title": "Donald E. Knuth, Tracy Larrabee, Paul M. Roberts, *Mathematical Writing*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://www-cs-faculty.stanford.edu/~knuth/klr.html",
+        "https://jmlr.csail.mit.edu/reviewing-papers/knuth_mathematical_writing.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H03",
+      "category": "human-writing",
+      "title": "Bjorn Poonen, *Practical Suggestions for Mathematical Writing*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://math.mit.edu/~poonen/papers/writing.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H04",
+      "category": "human-writing",
+      "title": "Renee Bell, Borys Kadets, Padmavathi Srinivasan, Nicholas Triantafillou, Isabel Vogt, *Practical Suggestions for Mathematical Writing*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://ngtriant.github.io/notes/practical_suggestions_for_mathematical_writing.pdf",
+        "https://doi.org/10.1090/noti2305"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H05",
+      "category": "human-writing",
+      "title": "Igor Pak, *How to Write a Clear Math Paper: Some 21st Century Tips*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://www.math.ucla.edu/~pak/papers/how-to-write1.pdf",
+        "https://igorpak.wordpress.com/2017/07/12/how-to-write-math-papers-clearly/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H06",
+      "category": "human-writing",
+      "title": "Clark Barwick, *Notes on Mathematical Writing*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://bimsa.net/activity/MathematicalCommunication/files/Clark%20Barwick%20--%20Notes%20on%20mathematical%20writing.pdf",
+        "https://www.maths.ed.ac.uk/~cbarwick/papers/style.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H07",
+      "category": "human-writing",
+      "title": "Michèle Audin, *Écrire des mathématiques* / *Conseils aux auteurs de textes mathématiques*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://audin.pages.math.unistra.fr/autresarticles.html",
+        "https://audin.pages.math.unistra.fr/autresarticles/newhowto.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H08",
+      "category": "human-writing",
+      "title": "David Goss, *Some Hints on Mathematical Style*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://www.cnsr.ictas.vt.edu/mentoring/Goss.pdf",
+        "https://cr.yp.to/bib/1998/goss-style.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H09",
+      "category": "human-writing",
+      "title": "Nicholas J. Higham, *Handbook of Writing for the Mathematical Sciences*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://epubs.siam.org/doi/book/10.1137/1.9781611976106",
+        "https://epubs.siam.org/doi/10.1137/1.9780898719550"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H10",
+      "category": "human-writing",
+      "title": "Steven G. Krantz, *A Primer of Mathematical Writing*, second edition",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://arxiv.org/abs/1612.04888v1",
+        "https://arxiv.org/html/1612.04888v1",
+        "https://doi.org/10.48550/arXiv.1612.04888"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H11",
+      "category": "human-writing",
+      "title": "Douglas B. West, *The Grammar According to West*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://mail.dwest.web.illinois.edu/grammar.html"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H12",
+      "category": "human-writing",
+      "title": "Andrea Bertozzi, *Advice for Writing Research Papers and Dissertations*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://www.math.ucla.edu/~bertozzi/advice-papers.html"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H13",
+      "category": "human-writing",
+      "title": "Bruce C. Berndt, *How to Write Mathematical Papers*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://berndt.web.illinois.edu/writingmath.pdf",
+        "https://berndt.web.illinois.edu/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H14",
+      "category": "human-writing",
+      "title": "Oded Goldreich, *How to Write a Paper*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://www.wisdom.weizmann.ac.il/~oded/writing.html",
+        "https://www.wisdom.weizmann.ac.il/~oded/R2/re-writing.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H15",
+      "category": "human-writing",
+      "title": "Steven L. Kleiman, with Glenn P. Tesler, *Writing a Math Phase Two Paper*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://ocw.mit.edu/courses/18-704-seminar-in-algebra-and-number-theory-computational-commutative-algebra-and-algebraic-geometry-fall-2008/resources/piiujm2-1/",
+        "https://www.cnsr.ictas.vt.edu/mentoring/Kleiman.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H16",
+      "category": "human-writing",
+      "title": "Ashley Reiter, *Writing a Research Paper in Mathematics* (12 September 1995)",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://web.mit.edu/jrickert/www/mathadvice.html"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H17",
+      "category": "human-writing",
+      "title": "Boris Khesin, *Suggestions on Better Writing Math Texts*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://www.math.utoronto.ca/khesin/biblio/better_writing.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H18",
+      "category": "human-writing",
+      "title": "Leonard Gillman, *Writing Mathematics Well: A Manual for Authors*; appendix, *The Use of Symbols: A Case Study*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://mathcomm.org/folder/the-use-of-symbols-a-case-study/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H19",
+      "category": "human-writing",
+      "title": "Terence Tao, *On Writing*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://terrytao.wordpress.com/advice-on-writing-papers/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H20",
+      "category": "human-writing",
+      "title": "Tao, *Take Advantage of the English Language*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://terrytao.wordpress.com/advice-on-writing-papers/take-advantage-of-the-english-language/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H21",
+      "category": "human-writing",
+      "title": "Tao, *Give Appropriate Amounts of Detail*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://terrytao.wordpress.com/advice-on-writing-papers/give-appropriate-amounts-of-detail/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H22",
+      "category": "human-writing",
+      "title": "Tao, *Create Lemmas*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://terrytao.wordpress.com/advice-on-writing-papers/create-lemmas/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H23",
+      "category": "human-writing",
+      "title": "Tao, *Motivate the Paper*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://terrytao.wordpress.com/advice-on-writing-papers/motivate-the-paper/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H24",
+      "category": "human-writing",
+      "title": "Tao, *Organise the Paper*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://terrytao.wordpress.com/advice-on-writing-papers/organise-the-paper/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H25",
+      "category": "human-writing",
+      "title": "Tao, *Describe the Results Accurately*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://terrytao.wordpress.com/advice-on-writing-papers/describe-the-results-accurately/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H26",
+      "category": "human-writing",
+      "title": "Tao, *Write a Rapid Prototype First*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://terrytao.wordpress.com/advice-on-writing-papers/write-a-rapid-prototype-first/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H27",
+      "category": "human-writing",
+      "title": "Tao, *Don't Overoptimise*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://terrytao.wordpress.com/advice-on-writing-papers/dont-overoptimise/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H28",
+      "category": "human-writing",
+      "title": "Timothy Gowers, *My Favourite Pedagogical Principle: Examples First!* (2007)",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://gowers.wordpress.com/2007/10/19/my-favourite-pedagogical-principle-examples-first/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H29",
+      "category": "human-writing",
+      "title": "Jean-Pierre Serre, *How to Write Mathematics Badly*, Harvard Basic Notions lecture (2003)",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://bpb-us-w2.wpmucdn.com/web.sas.upenn.edu/dist/0/713/files/2025/05/How_to_write_mathematics_badly__transcript_.pdf",
+        "https://wstein.org/edu/basic/serre/",
+        "https://www.youtube.com/watch?v=ECQyFzzBHlo"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H30",
+      "category": "human-writing",
+      "title": "J. S. Milne, *Tips for Authors*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://www.jmilne.org/math/tips.html"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H31",
+      "category": "human-writing",
+      "title": "Jonathan Richard Shewchuk, *Three Sins of Authors in Computer Science and Math* (1997)",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://www.cs.cmu.edu/~jrs/sins.html"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H32",
+      "category": "human-writing",
+      "title": "Dimitri Bertsekas, *Ten Simple Rules for Mathematical Writing*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://faculty.engineering.asu.edu/bertsekas/ten-simple-rules-for-mathematical-writing/",
+        "https://web.mit.edu/dimitrib/www/Ten_Rules.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H33",
+      "category": "human-writing",
+      "title": "John N. Tsitsiklis, *A Few Tips on Writing Papers with Mathematical Content* (December 2020)",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://www.mit.edu/~jnt/write.html",
+        "https://www.mit.edu/~jnt/Papers/R-20-write-v5.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H34",
+      "category": "human-writing",
+      "title": "Jerzy Trzeciak, *Writing Mathematical Papers in English: A Practical Guide*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://ems.press/books/standalone/11",
+        "https://ems.press/content/book-chapter-files/18522",
+        "https://ems.press/books/standalone/11/contents"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H35",
+      "category": "human-writing",
+      "title": "Francis Edward Su, *Guidelines for Good Mathematical Writing*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://math.hmc.edu/su/writing-math-well/",
+        "https://math.hmc.edu/su/wp-content/uploads/sites/10/2020/08/Guidelines-for-Good-Mathematical-Writing.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H36",
+      "category": "human-writing",
+      "title": "Keith Conrad, *Advice on Mathematical Writing*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://kconrad.math.uconn.edu/blurbs/proofs/writingtips.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "H37",
+      "category": "human-writing",
+      "title": "Tao, *Use Good Notation*",
+      "survey_file": "01-human-writing.md",
+      "urls": [
+        "https://terrytao.wordpress.com/advice-on-writing-papers/use-good-notation/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S01",
+      "category": "ai-instructions",
+      "title": "Amélie Loher, `latex-math-writing/SKILL.md`",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://github.com/amelieloher/math-paper-skills/blob/main/skills/latex-math-writing/SKILL.md",
+        "https://raw.githubusercontent.com/amelieloher/math-paper-skills/main/skills/latex-math-writing/SKILL.md",
+        "https://amelieloher.github.io/index.html"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S02",
+      "category": "ai-instructions",
+      "title": "Loher, `references/writing-rules.md`",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://raw.githubusercontent.com/amelieloher/math-paper-skills/main/skills/latex-math-writing/references/writing-rules.md"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S03",
+      "category": "ai-instructions",
+      "title": "Loher, `references/artisan-writing.md`",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://raw.githubusercontent.com/amelieloher/math-paper-skills/main/skills/latex-math-writing/references/artisan-writing.md"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S04",
+      "category": "ai-instructions",
+      "title": "Loher, `math-paper-campaign/SKILL.md`",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://raw.githubusercontent.com/amelieloher/math-paper-skills/main/skills/math-paper-campaign/SKILL.md"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S05",
+      "category": "ai-instructions",
+      "title": "Loher, `shared-controls.md`",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://raw.githubusercontent.com/amelieloher/math-paper-skills/main/skills/math-paper-campaign/references/shared-controls.md"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S06",
+      "category": "ai-instructions",
+      "title": "Loher, `route-polish.md`",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://raw.githubusercontent.com/amelieloher/math-paper-skills/main/skills/math-paper-campaign/references/route-polish.md"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S07",
+      "category": "ai-instructions",
+      "title": "Haruhisa Enomoto, `write-research-paper/SKILL.md`",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://raw.githubusercontent.com/haruhisa-enomoto/math-paper-skills/main/skills/write-research-paper/SKILL.md",
+        "https://github.com/haruhisa-enomoto/math-paper-skills"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S08",
+      "category": "ai-instructions",
+      "title": "Enomoto, `read-research-paper/SKILL.md`",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://raw.githubusercontent.com/haruhisa-enomoto/math-paper-skills/main/skills/read-research-paper/SKILL.md"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S09",
+      "category": "ai-instructions",
+      "title": "Enomoto, `polish-math-prose/SKILL.md`",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://raw.githubusercontent.com/haruhisa-enomoto/math-paper-skills/main/skills/polish-math-prose/SKILL.md"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S10",
+      "category": "ai-instructions",
+      "title": "Enomoto, mathematical exposition standard",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://raw.githubusercontent.com/haruhisa-enomoto/math-paper-skills/main/skills/write-research-paper/references/exposition-standard.md"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S11",
+      "category": "ai-instructions",
+      "title": "Enomoto, AI mathematical prose anti-patterns",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://raw.githubusercontent.com/haruhisa-enomoto/math-paper-skills/main/skills/polish-math-prose/references/anti-patterns.md"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S12",
+      "category": "ai-instructions",
+      "title": "Enomoto, continuous first-reader protocol",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://raw.githubusercontent.com/haruhisa-enomoto/math-paper-skills/main/skills/read-research-paper/references/first-reader-review.md"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S13",
+      "category": "ai-instructions",
+      "title": "Yoshito Ishiki, `write-research-paper/SKILL.md`",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://raw.githubusercontent.com/yoshito-ishiki-math/math-paper-skills/main/skills/write-research-paper/SKILL.md",
+        "https://yoshito-ishiki-math.github.io/research-tools.html"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S14",
+      "category": "ai-instructions",
+      "title": "Ishiki, independent reader",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/skills/read-research-paper/SKILL.md"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S15",
+      "category": "ai-instructions",
+      "title": "Ishiki, optional `examples/author-style.md`",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/examples/author-style.md"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S16",
+      "category": "ai-instructions",
+      "title": "Ishiki, public research harness overview",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://yoshito-ishiki-math.github.io/research-tools.html"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S17",
+      "category": "ai-instructions",
+      "title": "JiahaoLi-creator, `mathematical-academic-writing`",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://raw.githubusercontent.com/JiahaoLi-creator/mathematical-academic-writing/main/SKILL.md",
+        "https://github.com/JiahaoLi-creator/mathematical-academic-writing"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S18",
+      "category": "ai-instructions",
+      "title": "TianhuaGao, `math-prose`",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://raw.githubusercontent.com/TianhuaGao/math-prose/main/SKILL.md"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S19",
+      "category": "ai-instructions",
+      "title": "VeryMath, `AI4Math-Writing/paper-writing`",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://raw.githubusercontent.com/VeryMath/AI4Math-Writing/main/skills/paper-writing/SKILL.md"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S20",
+      "category": "ai-instructions",
+      "title": "mmogib, `math-research-writer`",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://raw.githubusercontent.com/mmogib/research-toolkit/main/skills/math-research-writer/SKILL.md",
+        "https://github.com/mmogib/research-toolkit"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S21",
+      "category": "ai-instructions",
+      "title": "fcescob, `terence-tao-skills/mathematical-writing`",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://raw.githubusercontent.com/fcescob/terence-tao-skills/main/skills/mathematical-writing/SKILL.md",
+        "https://github.com/fcescob/terence-tao-skills"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S22",
+      "category": "ai-instructions",
+      "title": "K-Dense-AI, pure-mathematician `AGENTS.md`",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://raw.githubusercontent.com/K-Dense-AI/scientific-agents/main/scientific-agents/pure-mathematician/AGENTS.md"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S23",
+      "category": "ai-instructions",
+      "title": "mathcommunity, `oai-math-revised/AGENTS.md`",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://github.com/mathcommunity/oai-math-revised/blob/main/AGENTS.md"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "S24",
+      "category": "ai-instructions",
+      "title": "txmy, `ultra-mathematician/AGENTS.md`",
+      "survey_file": "02-ai-instructions.md",
+      "urls": [
+        "https://raw.githubusercontent.com/txmy/ultra-mathematician/main/AGENTS.md"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A01",
+      "category": "agent-research",
+      "title": "D’Arcy, Hope, Birnbaum, Downey: *MARG: Multi-Agent Review Generation for Scientific Papers* (2024)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2401.04259v1",
+        "https://github.com/allenai/marg-reviewer"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A02",
+      "category": "agent-research",
+      "title": "Liang et al.: *Can Large Language Models Provide Useful Feedback on Research Papers? A Large-Scale Empirical Analysis* (2023 preprint; 2024 journal publication)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2310.01783v1",
+        "https://par.nsf.gov/servlets/purl/10617069"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A03",
+      "category": "agent-research",
+      "title": "Chamoun, Schlichtkrull, Vlachos: *Automated Focused Feedback Generation for Scientific Writing Assistance* (ACL Findings 2024)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://aclanthology.org/2024.findings-acl.580/",
+        "https://aclanthology.org/2024.findings-acl.580.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A04",
+      "category": "agent-research",
+      "title": "Lu et al.: *Agent Reviewers: Domain-specific Multimodal Agents with Shared Memory for Paper Review* (ICML 2025)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://proceedings.mlr.press/v267/lu25p.html"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A05",
+      "category": "agent-research",
+      "title": "Hou, Lin, Chen, Gong, He: *PaperDebugger: A Plugin-Based Multi-Agent System for In-Editor Academic Writing, Review, and Editing* (WWW Companion 2026)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2512.02589v2",
+        "https://doi.org/10.1145/3774905.3793122"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A06",
+      "category": "agent-research",
+      "title": "Chen et al.: *XtraGPT: Context-Aware and Controllable Academic Paper Revision via Human-AI Collaboration* (inspected 2026 revision)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2505.11336v4",
+        "https://github.com/Xtra-Computing/XtraGPT"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A07",
+      "category": "agent-research",
+      "title": "Zhao et al.: *APRES: An Agentic Paper Revision and Evaluation System* (2026)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2603.03142v1"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A08",
+      "category": "agent-research",
+      "title": "Goyal et al.: *ScholarPeer: A Multi-Agent Framework for Automated Peer Review* (2026 revision)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2601.22638v2"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A09",
+      "category": "agent-research",
+      "title": "Zhou et al.: *Discuss More, Comment Less: Boosting Automated Research via Multi-Perspective Collaborative Review* (October 2026)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2610.24050v1"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A10",
+      "category": "agent-research",
+      "title": "Benharrak, Zindulka, Lehmann, Heuer, Buschek: *Writer-Defined AI Personas for On-Demand Feedback Generation* (CHI 2024)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2309.10433v2",
+        "https://doi.org/10.1145/3613904.3642406",
+        "https://hciaiprojects.uni-bayreuth.de/projects/ai-personas"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A11",
+      "category": "agent-research",
+      "title": "Madaan et al.: *Self-Refine: Iterative Refinement with Self-Feedback* (NeurIPS 2023)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2303.17651v2",
+        "https://proceedings.neurips.cc/paper_files/paper/2023/file/91edff07232fb1b55a505a9e9f6c0ff3-Paper-Conference.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A12",
+      "category": "agent-research",
+      "title": "Shinn et al.: *Reflexion: Language Agents with Verbal Reinforcement Learning* (NeurIPS 2023)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2303.11366v4"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A13",
+      "category": "agent-research",
+      "title": "Bai et al.: *Constitutional AI: Harmlessness from AI Feedback* (2022)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2212.08073v1"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A14",
+      "category": "agent-research",
+      "title": "Shao et al.: *Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models* / STORM (NAACL 2024)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://aclanthology.org/2024.naacl-long.347/",
+        "https://arxiv.org/abs/2402.14207"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A15",
+      "category": "agent-research",
+      "title": "Jiang et al.: *Into the Unknown Unknowns: Engaged Human Learning through Participation in Language Model Agent Conversations* / Co-STORM (EMNLP 2024)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://aclanthology.org/2024.emnlp-main.554/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A16",
+      "category": "agent-research",
+      "title": "Huang et al.: *Large Language Models Cannot Self-Correct Reasoning Yet* (ICLR 2024)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2310.01798v2",
+        "https://openreview.net/forum?id=IkmD3fKBPQ"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A17",
+      "category": "agent-research",
+      "title": "Tyen, Mansoor, Carbune, Chen, Mak: *LLMs Cannot Find Reasoning Errors, but Can Correct Them Given the Error Location* (ACL Findings 2024)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://aclanthology.org/2024.findings-acl.826/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A18",
+      "category": "agent-research",
+      "title": "Gou et al.: *CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing* (ICLR 2024)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2305.11738v4"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A19",
+      "category": "agent-research",
+      "title": "Kamoi et al.: *When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs* (TACL 2024)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2406.01297v3",
+        "https://doi.org/10.1162/tacl_a_00713"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A20",
+      "category": "agent-research",
+      "title": "Du, Li, Torralba, Tenenbaum, Mordatch: *Improving Factuality and Reasoning in Language Models through Multiagent Debate* (2023 preprint; ICML 2024)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2305.14325v1"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A21",
+      "category": "agent-research",
+      "title": "Zhu et al.: *Demystifying Multi-Agent Debate: The Role of Confidence and Diversity* (2026)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2601.19921v3"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A22",
+      "category": "agent-research",
+      "title": "Zheng et al.: *When “A Helpful Assistant” Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models* (EMNLP Findings 2024)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2311.10054v3",
+        "https://aclanthology.org/2024.findings-emnlp.888/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A23",
+      "category": "agent-research",
+      "title": "Luz de Araujo, Röttger, Hovy, Roth: *Principled Personas: Defining and Measuring the Intended Effects of Persona Prompting on Task Performance* (EMNLP 2025)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://aclanthology.org/2025.emnlp-main.1364/",
+        "https://arxiv.org/abs/2508.19764"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A24",
+      "category": "agent-research",
+      "title": "Zheng et al.: *Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena* (NeurIPS 2023)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2306.05685v4"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A25",
+      "category": "agent-research",
+      "title": "Petrov, Dekoninck, Dimitrov, Vechev: *Not All Proofs Are Equal: Evaluating LLM Proof Quality Beyond Correctness* / ProofRank (2026)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2605.10379v3"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "A26",
+      "category": "agent-research",
+      "title": "Gonzalez et al.: *QEDBench: Quantifying the Alignment Gap in Automated Evaluation of University-Level Mathematical Proofs* (2026)",
+      "survey_file": "03-agent-research.md",
+      "urls": [
+        "https://arxiv.org/html/2602.20629v3"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E01",
+      "category": "exemplars-and-refereeing",
+      "title": "Ravi Vakil, *The Mathematics of Doodling* (2011)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://math.stanford.edu/~vakil/files/monthly116-129-vakil.pdf",
+        "https://doi.org/10.4169/amer.math.monthly.118.02.116",
+        "https://maa.org/chauvenet-prizes/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E02",
+      "category": "exemplars-and-refereeing",
+      "title": "Robert Ghrist, *Barcodes: The Persistent Topology of Data* (2008)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://www2.math.upenn.edu/~ghrist/preprints/barcodes.pdf",
+        "https://www.maths.ed.ac.uk/~v1ranick/papers/ghrist1.pdf",
+        "https://doi.org/10.1090/S0273-0979-07-01191-3"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E03",
+      "category": "exemplars-and-refereeing",
+      "title": "Bjorn Poonen, *Undecidability in Number Theory* (2008)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://math.uchicago.edu/~shmuel/lg-readings/Poonen.pdf",
+        "https://math.mit.edu/~poonen/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E04",
+      "category": "exemplars-and-refereeing",
+      "title": "Tom Leinster, *Rethinking Set Theory* (2014; preprint 2012)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://arxiv.org/abs/1212.6543v1",
+        "https://arxiv.org/pdf/1212.6543v1",
+        "https://doi.org/10.4169/amer.math.monthly.121.05.403"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E05",
+      "category": "exemplars-and-refereeing",
+      "title": "Jordan S. Ellenberg, *Geometry, Inference, Complexity, and Democracy* (2021)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://arxiv.org/abs/2006.10879v1",
+        "https://arxiv.org/pdf/2006.10879v1",
+        "https://doi.org/10.1090/bull/1708"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E06",
+      "category": "exemplars-and-refereeing",
+      "title": "Andrew Granville, *It Is Easy to Determine Whether a Given Integer Is Prime* (2005)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://wstein.org/129-05/refs/Granville-It_is_easy_to_determine_whether_a_given_integer_is_prime.pdf",
+        "https://intra.dms.umontreal.ca/~andrew/expository.php"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E07",
+      "category": "exemplars-and-refereeing",
+      "title": "John Milnor, *Analytic Proofs of the “Hairy Ball Theorem” and the Brouwer Fixed Point Theorem* (1978)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://web.math.utk.edu/~freire/teaching/m462s20/hairy-ball.pdf",
+        "https://www.jstor.org/stable/2320860",
+        "https://doi.org/10.1080/00029890.1978.11994635",
+        "https://www.ams.org/grants-awards/prizes-awards/2004-prizebook.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E08",
+      "category": "exemplars-and-refereeing",
+      "title": "John Milnor, *Classification of (n−1)-Connected 2n-Dimensional Manifolds and the Discovery of Exotic Spheres*",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://www.maths.ed.ac.uk/~v1ranick/papers/milnor.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E09",
+      "category": "exemplars-and-refereeing",
+      "title": "Vladimir Pozdnyakov and J. Michael Steele, *Buses, Bullies, and Bijections* (2016)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://vladimir-pozdnyakov.github.io/papers/BBB.pdf",
+        "https://doi.org/10.4169/math.mag.89.3.167",
+        "https://maa.org/news/mathematical-association-of-america-awards-authors-the-chauvenet-and-david-p-robbins-prize-at-2020-joint-mathematics-meeting/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E10",
+      "category": "exemplars-and-refereeing",
+      "title": "The Stacks Project, *Categories*, §4.2, “Definitions”",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://stacks.math.columbia.edu/tag/0013"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E11",
+      "category": "exemplars-and-refereeing",
+      "title": "Jacob Lurie, *Kerodon*, Chapter 1, “The Language of ∞-Categories”",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://kerodon.net/tag/0001"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E12",
+      "category": "exemplars-and-refereeing",
+      "title": "Ravi Vakil, *The Rising Sea: Foundations of Algebraic Geometry*, November 18, 2017 draft",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://math.stanford.edu/~vakil/216blog/FOAGnov1817public.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E13",
+      "category": "exemplars-and-refereeing",
+      "title": "Geordie Williamson, *Is Deep Learning a Useful Tool for the Pure Mathematician?* (2024; preprint v2, 2023)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://arxiv.org/abs/2304.12602v2",
+        "https://arxiv.org/pdf/2304.12602v2",
+        "https://doi.org/10.1090/bull/1829",
+        "https://maa.org/news/recipient-of-the-2026-chauvenet-prize-award-announced/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E14",
+      "category": "exemplars-and-refereeing",
+      "title": "Allen Hatcher, *Algebraic Topology*, Chapter 0 (book, 2002)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://pi.math.cornell.edu/~hatcher/AT/ATch0.pdf",
+        "https://pi.math.cornell.edu/~hatcher/AT/ATpage.html",
+        "https://people.math.harvard.edu/archive/272a_fall_04/Book/index.html"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E15",
+      "category": "exemplars-and-refereeing",
+      "title": "William P. Thurston, *On Proof and Progress in Mathematics* (1994)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://arxiv.org/abs/math/9404236v1",
+        "https://arxiv.org/pdf/math/9404236v1"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E16",
+      "category": "exemplars-and-refereeing",
+      "title": "Jean-Pierre Serre, *Faisceaux algébriques cohérents* (FAC, 1955)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://www.college-de-france.fr/sites/default/files/media/document/2023-11/Jean-Pierre%20Serre_Faisceaux%20alg%C3%A9briques%20coh%C3%A9rents.pdf",
+        "https://www.jstor.org/stable/1969915",
+        "https://old.maa.org/node/106296"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E17",
+      "category": "exemplars-and-refereeing",
+      "title": "Jean-Pierre Serre, *Géométrie algébrique et géométrie analytique* (GAGA, 1956)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://www.numdam.org/article/AIF_1956__6__1_0.pdf",
+        "https://numdam.org/articles/10.5802/aif.59/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E18",
+      "category": "exemplars-and-refereeing",
+      "title": "John Milnor, *Morse Theory* (1963), based on notes by Michael Spivak and Robert Wells",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://math.stanford.edu/~ralph/math215b/Milnor.pdf",
+        "https://press.princeton.edu/books/paperback/9780691080086/morse-theory",
+        "https://doi.org/10.1017/S0013091500011330",
+        "https://mathweb.ucsd.edu/~justin/250F16/250AF16.html"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E19",
+      "category": "exemplars-and-refereeing",
+      "title": "John Milnor, *Topology from the Differentiable Viewpoint* (1965), based on notes by David Weaver",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://people.dm.unipi.it/benedett/MILNOR-TDVPOINT.pdf",
+        "https://assets.cambridge.org/97805213/88702/excerpt/9780521388702_excerpt.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E20",
+      "category": "exemplars-and-refereeing",
+      "title": "Michael Atiyah and Raoul Bott, *The Yang–Mills Equations over Riemann Surfaces* (1983)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://metaphor.ethz.ch/x/2025/hs/401-3005-00L/texts/classic/atiyah_bott_1997_yang_mills.pdf",
+        "https://doi.org/10.1098/rsta.1983.0017",
+        "https://cmsa.fas.harvard.edu/event/cmsa-math-science-literature-lecture_kirwan/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E21",
+      "category": "exemplars-and-refereeing",
+      "title": "Robin Hartshorne, *Algebraic Geometry* (1977)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://link.springer.com/book/10.1007/978-1-4757-3849-0",
+        "https://sites.math.rutgers.edu/courses/535/535-f08/hartshorne.pdf",
+        "https://www.ams.org/notices/199910/from.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "E22",
+      "category": "exemplars-and-refereeing",
+      "title": "Robin Hartshorne, *Equivalence Relations on Algebraic Cycles and Subvarieties of Small Codimension* (1975)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://doi.org/10.1090/pspum/029",
+        "https://www.ams.org/notices/199910/from.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "R01",
+      "category": "exemplars-and-refereeing",
+      "title": "Mathematical Association of America, *Guide for Referees*",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://maa.org/guide-for-referees/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "R02",
+      "category": "exemplars-and-refereeing",
+      "title": "MAA, *Referee's Report: Title of Paper* (Mathematics Magazine template)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://maa.org/wp-content/uploads/2024/06/Referee-Report-Template.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "R03",
+      "category": "exemplars-and-refereeing",
+      "title": "SIAM Journal on Mathematics of Data Science, *Instructions for Referees*",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://epubs.siam.org/simods/instructions-for-referees"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "R04",
+      "category": "exemplars-and-refereeing",
+      "title": "European Mathematical Society, *Code of Practice for Mathematical Publication* (approved March 19, 2025)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://euromathsoc.org/code-of-practice"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "R05",
+      "category": "exemplars-and-refereeing",
+      "title": "London Mathematical Society, *Ethical Policy for Journals* (updated October 2026)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://www.lms.ac.uk/publications/policies/ethicalpolicy"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "R06",
+      "category": "exemplars-and-refereeing",
+      "title": "Illinois Journal of Mathematics, *Review Process*",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://ijm.math.illinois.edu/review-process/"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "R07",
+      "category": "exemplars-and-refereeing",
+      "title": "London Mathematical Society, *Guide to Authors*",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://www.lms.ac.uk/sites/lms.ac.uk/files/Publications/AuthorGuide.pdf"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    },
+    {
+      "id": "R08",
+      "category": "exemplars-and-refereeing",
+      "title": "Jeroen Hanselman, *Guidelines for Writing and Reviewing Software in Computer Algebra* (2025)",
+      "survey_file": "04-exemplars-and-refereeing.md",
+      "urls": [
+        "https://arxiv.org/abs/2503.01541v1",
+        "https://arxiv.org/pdf/2503.01541v1"
+      ],
+      "inspection": "See the source card; depths range from selected primary text to metadata-only.",
+      "retention": "summary-only; no original payload retained"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "scope": "Hashes of locally authored survey artifacts only; these are not hashes of upstream source payloads.",
+  "files": {
+    "01-human-writing.md": "2f5a84d25b6930343c2ccdf7221837b7136b8a488e155e7748d2dc3f9ce9cfef",
+    "02-ai-instructions.md": "73df240ccd16b33449f109a08e37975d767f522db71900724893eab8105a7ab0",
+    "03-agent-research.md": "e332433134df79eb3da78eb0177b687c4d10050e2264bbee454215d939398e1e",
+    "04-exemplars-and-refereeing.md": "a26745a0cd73e1160159353a8a16425ccc38f0ee2c12b0711cca798bf776d803",
+    "05-recommendations.md": "717e0ab65a9bae237c6fecfc01fc325234bf2628ea0dc9626ae8d22f9d6e6e15",
+    "06-agent-prompts.proposed.md": "598fc62b541353645cefe3c2e50efff01053ac96530ea92ca1c6bd32ae547f03",
+    "README.md": "98788795681d5be04ee55e1df0bba43549f950f2624c77f38cd59a830aed277d",
+    "gaps.json": "a832688051f96d4805eb265c418192c6d6ada365a0e02e4b528c50e0e26c506d",
+    "ledger.md": "68aeda0d0bbf37eaae4c2d93406e56b47b39e458bc4fd30891424a0ba0c49294",
+    "search-log.md": "9d8d442907efd99e62e0f33c1119685c94c919c89e0ad857f35789afdf4f0285",
+    "sources.json": "d643a24ad320514ffd34b9a544645198231ddd5157fc8389b4f616b3e42626b6",
+    "writing-style.proposed.md": "8652542b92fe35792784b03dbb7a9901efb9ce748f46713df01a3a61a9e72139"
+  }
+}
