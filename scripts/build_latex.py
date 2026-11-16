@@ -9,10 +9,12 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def build(root, bibliography=False):
+def build(root, bibliography=False, *, notebook=False):
     if not shutil.which('latexmk'):
         raise ValueError('latexmk is missing; install a TeX distribution')
-    if bibliography:
+    if notebook:
+        sources = [(root / 'notebook/notebook.tex', root / 'build/latex/notebook')]
+    elif bibliography:
         from references import verify
         records = verify(root)
         if not records:
@@ -56,9 +58,11 @@ def build(root, bibliography=False):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--bibliography', action='store_true')
+    entry_point = parser.add_mutually_exclusive_group()
+    entry_point.add_argument('--bibliography', action='store_true')
+    entry_point.add_argument('--notebook', action='store_true')
     args = parser.parse_args()
     try:
-        build(ROOT, args.bibliography)
+        build(ROOT, args.bibliography, notebook=args.notebook)
     except (ValueError, OSError) as error:
         sys.exit('error: ' + str(error))

@@ -10,6 +10,7 @@ A failed proof attempt is not a counterexample.
 A numerical experiment is evidence about that experiment, not a theorem.
 Record assumptions, exact source versions and failure mechanisms.
 Link promoted work to the manuscript label and preserve relevant earlier evidence.
+When a result affects a project-wide strategy, have the [route registry](../workflow/ROUTES.md) link to the evidence here. Use the [current frontier](../workflow/CURRENT.md) to identify the next check.
 
 Start from [the example topic](example/README.md), then replace it with your own organization.
 Dated scratch files are fine inside a topic, but dates alone are not an index.

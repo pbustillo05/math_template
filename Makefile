@@ -1,6 +1,6 @@
 PYTHON ?= python3
 export PYTHONDONTWRITEBYTECODE = 1
-.PHONY: all doctor check test pdf bibliography graph vscode release clean
+.PHONY: all doctor check test pdf notebook bibliography graph vscode release clean
 all: pdf
 doctor:
 	$(PYTHON) scripts/doctor.py
@@ -11,6 +11,8 @@ test:
 	$(PYTHON) -m unittest discover -s scripts/tests -v
 pdf:
 	$(PYTHON) scripts/build_latex.py
+notebook:
+	$(PYTHON) scripts/build_latex.py --notebook
 bibliography:
 	$(PYTHON) scripts/build_latex.py --bibliography
 graph:

@@ -4,6 +4,7 @@
 
 This repository is a mathematics research workspace.
 Read `workflow/CURRENT.md` and the relevant topic README before starting; update them when the frontier changes.
+Use the bounded research cycle below for substantive mathematical work.
 Explicit user instructions take precedence over this template.
 Do not invent a project direction from the demonstration theorem.
 Preserve unrelated edits, source evidence, and useful failed attempts.
@@ -13,15 +14,23 @@ Commit and push only when the user requests them.
 
 | Path | Material |
 | --- | --- |
-| `workflow/` | Current frontier, task queue, reviewed claims, and links between versions |
+| `workflow/` | Problem statement, current frontier, route registry, optional task queue, reviews, and version links |
 | `draft/` | Polished manuscript assembled from `draft/main.tex` |
 | `notes/<topic>/` | Active SemanTeX units alongside Markdown research history and ledgers |
+| `notebook/` | Optional LaTeX notebook for mathematical milestones |
 | `references/KEY/` | Hash-locked original sources and editable `audit/` annotations |
 | `preamble/` | Shared LaTeX environments and SemanTeX commands |
 | `scripts/` | Graph, corpus, build, review, and semantic retrieval commands |
 | `.agents/skills/` | Repository skills, including paper conversion |
 | `tools/vscode-semantex/` | Editor navigation backed by the same index |
 | `build/` | Generated PDFs, graph exports, semantic indexes, and optional downloaded model weights |
+
+## Bounded research cycle
+
+Recover the exact inputs listed in `workflow/CURRENT.md`. Consult `workflow/PROBLEM.md` for the governing question and assumptions, and `workflow/ROUTES.md` when choosing or revisiting a strategy.
+Work on one precise question per assignment. Use its stopping condition to decide when the evidence is sufficient or when a specific obstruction should be handed back. When several routes are live, prefer a check whose outcome would materially change a route decision.
+Record the argument, experiment, or counterexample in the topic notes. After a substantive round, update the affected claim or route with a pointer to the evidence, then record the next check in `workflow/CURRENT.md`.
+Use [the research cycle guide](workflow/RESEARCH-CYCLE.md) for handoffs and [the user manual](USER-MANUAL.md) for examples, manuscript review, and the optional milestone notebook.
 
 ## Drafts and notes
 

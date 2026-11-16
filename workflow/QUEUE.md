@@ -2,7 +2,5 @@
 
 | Priority | Task | Owner | Status | Output / discharge criterion |
 | --- | --- | --- | --- | --- |
-| 1 | Replace the example with the research question | unassigned | open | Updated draft title and topic README |
-| 2 | Acquire relevant literature | unassigned | open | Pinned papers, DOI metadata and source gaps |
 
-Keep this queue short. Put topic details and failed attempts in `notes/`.
+Use this queue for additional tasks and delegated assignments. Link the route or topic, specify the output, and give each assigned task an owner and a stopping condition. [CURRENT.md](CURRENT.md) carries the next research check.

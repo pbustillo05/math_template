@@ -1,5 +1,7 @@
 # Tooling provenance
 
+This hybrid starts from the Nov 16 edition of `math_template`. It adapts the route registry and human-facing notebook from `_infrastructure copy`. The notebook is built on demand, and session handoffs use the short frontier in `workflow/CURRENT.md`.
+
 The initial template was assembled on 2026-11-14 from local sibling repositories at the user's request.
 No paper corpus, personal paths, credentials, session history, research claims or acceptance records were imported.
 

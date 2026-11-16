@@ -1,0 +1,17 @@
+\section{Example: fixed points of an idempotent map}
+
+The demonstration asks why an idempotent map $p\colon X\to X$ has
+$\operatorname{im}(p)=\{x\in X\mid p(x)=x\}$.
+The identity $p(p(x))=p(x)$ already says that every image point is fixed.
+Conversely, a fixed point $y$ is the image of itself.
+
+One tempting step is to cancel $p$ from $p(p(x))=p(x)$ and conclude
+$p(x)=x$ on all of $X$.
+Cancellation would require injectivity. The constant map to $0$ on
+$\{0,1\}$ is idempotent and sends $1$ to $0$.
+This example pinpoints the distinction between being the identity on
+the image and being the identity on the full domain.
+
+The direct argument is recorded in \texttt{notes/example/units.tex}
+as \texttt{lem:notes-image-fixed} and appears in the demonstration
+draft as \texttt{lem:image-fixed}. The demonstration is unreviewed.

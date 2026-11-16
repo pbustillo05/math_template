@@ -1,7 +1,8 @@
-# Math research template
+# Hybrid math research template
 
-A cloneable workspace for rigorous mathematics, readable LaTeX, locally retained literature, and searchable mathematical notes.
-The included mathematics is a small, explicitly **unreviewed** demonstration; replace it with your project.
+A workspace for comparing research approaches, finding exact mathematics in notes and papers, and reviewing a polished LaTeX manuscript. The [user manual](USER-MANUAL.md) walks through setup, a research round, manuscript review, and the optional milestone notebook.
+
+The included mathematics is a small, **unreviewed** demonstration. Replace it with your project when ready.
 
 ## Start here
 
@@ -9,17 +10,16 @@ Requirements: Python 3.10+ (standard library only), Git, and a TeX distribution 
 Poppler validates physical PDF citation pages. Semantic search uses optional local model weights and a llama.cpp runtime.
 Node.js 18+ is needed only for extension development/tests; VS Code runs the installed extension itself.
 
+From the project folder, run these commands.
+
 ```sh
-git clone git@github.com:pbustillo05/math_template.git my-research
-cd my-research
 make doctor
 make check
 make pdf
 ```
 
 Open `build/latex/draft/main.pdf`.
-Rename the title/author in `draft/main.tex`, replace `draft/sections/example.tex`, and fill in `workflow/CURRENT.md`.
-If starting an independent repository, change `origin` to your own repository before pushing.
+For your first research round, fill in the [problem statement](workflow/PROBLEM.md), add an approach to the [route registry](workflow/ROUTES.md), and put one bounded question in the [current frontier](workflow/CURRENT.md).
 
 ## Workspace map
 
@@ -33,7 +33,8 @@ If starting an independent repository, change `origin` to your own repository be
 | `writing-style.md` | Mathematical exposition and aesthetics |
 | `agents/SEMANTEX.md` | Separate LaTeX/code/annotation contract |
 | `agents/` | Bounded author, proof, counterexample, source and style review protocols |
-| `workflow/` | Current state, queue and review evidence |
+| `workflow/` | Problem, current frontier, routes, research cycle, optional task queue, and review evidence |
+| `notebook/` | Optional dated LaTeX entries for mathematical milestones |
 
 ## Navigate mathematics
 
@@ -98,6 +99,7 @@ See [extension details](tools/vscode-semantex/README.md).
 
 - `make check`: source graph, reference integrity, structural checks and regression tests. No network.
 - `make pdf`: compile the main manuscript and standalone section into ignored `build/latex/` with SyncTeX.
+- `make notebook`: compile the optional milestone notebook into `build/latex/notebook/notebook.pdf`.
 - `make bibliography`: compile `references/cite-all.tex` into `build/latex/references/`.
 - `make graph`: JSON index plus Mermaid and Graphviz diagrams under `build/semantex/`.
 - `make release TARGET=lem:image-fixed`: require fresh independent reviews for this result's entire support closure. The untouched demo intentionally fails this gate.
