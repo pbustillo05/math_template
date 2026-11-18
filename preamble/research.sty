@@ -2,7 +2,14 @@
 \ProvidesPackage{research}[2026/11/14 Shared mathematical preamble]
 \RequirePackage[T1]{fontenc}
 \RequirePackage{amsmath,amssymb,amsthm,aliascnt}
-\RequirePackage{xcolor}
+\RequirePackage{bibliography-compat}
+\RequirePackage{lmodern}
+\RequirePackage[table,dvipsnames]{xcolor}
+\RequirePackage[margin=1in,headheight=14pt]{geometry}
+\RequirePackage{microtype,enumitem,graphicx,tikz,tikz-cd,mathtools,mathrsfs,stmaryrd,etoolbox,xurl,needspace}
+\setlist{nosep,leftmargin=*}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
 \RequirePackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \RequirePackage{semantex}
 \newtheorem{theorem}{Theorem}[section]
@@ -25,7 +32,31 @@
 \theoremstyle{remark}
 \ResearchTheorem{remark}{Remark}
 \ResearchTheorem{question}{Question}
-\DeclareMathOperator{\im}{im}
+\ResearchTheorem{assumption}{Assumption}
+\ResearchTheorem{hypothesis}{Hypothesis}
+\ResearchTheorem{construction}{Construction}
+\ResearchTheorem{observation}{Observation}
+\ResearchTheorem{warning}{Warning}
+\ResearchTheorem{exercise}{Exercise}
+\ResearchTheorem{openquestion}{Open question}
+\ResearchTheorem{blank}{Claim}
+% Named clauses retain the enclosing enumerate numbering and have their own semantic labels.
+\newenvironment{clause}{}{}
+\ResearchTheorem{claim}{Claim}
+\ResearchTheorem{conditionaltheorem}{Conditional theorem}
+\ResearchTheorem{obligation}{Open obligation}
+\ResearchTheorem{principle}{Principle}
+\ResearchTheorem{proposal}{Proposed theorem}
+\ResearchTheorem{scope}{Scope}
+\ResearchTheorem{tool}{Tool}
+\makeatletter
+% Book-based standalone notes may carry an abstract; preserve native article/report layouts.
+\@ifundefined{abstract}{%
+  \newenvironment{abstract}{\begin{quotation}\small\noindent\textbf{\abstractname}\par}{\end{quotation}}%
+}{}
+\providecommand{\abstractname}{Abstract}
+\@ifundefined{im}{\DeclareMathOperator{\im}{im}}{}
+\makeatother
 
 % A section built alone receives the same bibliography as the assembled draft.
 \newif\ifResearchHasCitations

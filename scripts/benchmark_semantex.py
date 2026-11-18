@@ -17,11 +17,16 @@ from semantex_rag import VectorIndex, hybrid_rank, lexical_rank
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def fixture(root):
-    examples = json.loads((ROOT / "scripts/tests/fixtures/embedding_queries.json").read_text())
+DEFAULT_FIXTURE = ROOT / "scripts/tests/fixtures/embedding_queries.json"
+
+
+def fixture(root, dataset=DEFAULT_FIXTURE):
+    examples = json.loads(dataset.read_text())
     sources = defaultdict(list)
     queries = []
     for scope, label, statement, query in examples:
+        if scope not in {"draft", "notes", "references"}:
+            raise ValueError(f"unknown fixture scope: {scope}")
         env = {"lem": "lemma", "def": "definition", "cex": "counterexample"}[label.split(":")[0]]
         if scope == "references":
             sources["references/Fixture/paper.tex"].append(
@@ -32,6 +37,8 @@ def fixture(root):
                 rf"\begin{{{env}}}\label[{statement}]{{{label}}}{statement}\end{{{env}}}")
         if query:
             queries.append((query, label))
+    if not queries:
+        raise ValueError("a benchmark fixture must include a query and its expected label")
     for file, units in sources.items():
         path = root / file
         path.parent.mkdir(parents=True)
@@ -39,10 +46,10 @@ def fixture(root):
     return queries
 
 
-def benchmark(profile):
+def benchmark(profile, dataset=DEFAULT_FIXTURE):
     with tempfile.TemporaryDirectory(prefix="semantex-bench-") as scratch:
         root = Path(scratch).resolve()
-        queries = fixture(root)
+        queries = fixture(root, dataset)
         graph = Graph(root)
         if graph.errors:
             raise ValueError("\n".join(graph.errors))
@@ -79,5 +86,7 @@ def benchmark(profile):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--profile", choices=PROFILES, default=DEFAULT)
+    parser.add_argument("--fixture", type=Path, default=DEFAULT_FIXTURE,
+                        help="JSON rows [scope, lem:/def:/cex: label, statement, query]. An empty query is a distractor.")
     args = parser.parse_args()
-    print(json.dumps(benchmark(args.profile), indent=2))
+    print(json.dumps(benchmark(args.profile, args.fixture), indent=2))

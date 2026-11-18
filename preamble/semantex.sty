@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{semantex}[2026/11/16 Mathematical research annotations]
+\ProvidesPackage{semantex}[2026/11/17 Scoped mathematical research annotations]
 % Loaded after amsthm and hyperref.
 \ExplSyntaxOn
 \NewCommandCopy \semantex_original_cite \cite
@@ -7,24 +7,159 @@
 \NewCommandCopy \semantex_original_endproof \endproof
 \NewHook{semantex/cite}
 
+% Machine lookup and aux keys are ASCII hashes of exact native identities.
+% Native labels remain unchanged in authored sources and graph registries.
+% pdftexcmds is already loaded by hyperref and provides an engine-portable hash.
+\cs_new:Npn \semantex_key:n #1 { \pdf@mdfivesum{\detokenize{#1}} }
+\NewDocumentCommand \SemanTeXLiteralID { m } {
+  \texttt{\tl_map_inline:nn {#1} {##1\hskip 0pt plus .1pt\relax\allowbreak}}
+}
+\tl_new:N \l_semantex_context_tl
+\tl_new:N \l_semantex_reference_literal_tl
+\NewDocumentCommand \SemanTeXDeclareContext { m } {
+  \cs_gset:cpn {semantex_context_#1} {}
+}
+% Local assignment is restored by subfiles' own inclusion groups. Plain-input
+% fragments must keep the explicit group provided by the context wrapper plan.
+\NewDocumentCommand \SemanTeXContext { m } {
+  \cs_if_exist:cTF {semantex_context_#1}
+    {\tl_set:Nn \l_semantex_context_tl {#1}}
+    {\PackageError{semantex}{Unregistered~document~context~#1}
+      {Generate~and~load~the~SemanTeX~runtime~data~before~compiling.}}
+}
+\NewDocumentCommand \SemanTeXDeclareLabelKey { m m m } {
+  \cs_gset:cpn {semantex_label_#1/#2} {#3}
+}
+\NewDocumentCommand \SemanTeXDeclareReferenceKey { m m m } {
+  \cs_gset:cpn {semantex_reference_#1/#2} {#3}
+}
+\NewDocumentCommand \SemanTeXDeclareAliasKey { m m } {
+  \cs_gset:cpn {semantex_alias_#1} {#2}
+}
+\cs_new:Npn \semantex_label_key:n #1 {
+  \cs_if_exist:cTF {semantex_label_\l_semantex_context_tl/\semantex_key:n{#1}}
+    {\use:c {semantex_label_\l_semantex_context_tl/\semantex_key:n{#1}}}
+    {\semantex_key:n{#1}}
+}
+\cs_new:Npn \semantex_reference_declared_key:n #1 {
+  \cs_if_exist:cTF {semantex_label_\l_semantex_context_tl/\semantex_key:n{#1}}
+    {\use:c {semantex_label_\l_semantex_context_tl/\semantex_key:n{#1}}}
+    {\cs_if_exist:cTF {semantex_reference_\l_semantex_context_tl/\semantex_key:n{#1}}
+      {\use:c {semantex_reference_\l_semantex_context_tl/\semantex_key:n{#1}}}
+      {\semantex_key:n{#1}}}
+}
+\cs_new:Npn \semantex_canonical_key:n #1 {
+  \cs_if_exist:cTF {semantex_alias_#1} {\use:c {semantex_alias_#1}} {#1}
+}
+\cs_new:Npn \semantex_reference_key:n #1 {
+  \exp_args:Ne \semantex_canonical_key:n {\semantex_reference_declared_key:n {#1}}
+}
+% Native display text is escaped by the generator, never treated as a TeX key.
+\NewDocumentCommand \SemanTeXDeclareExternalKey { m m m } {
+  \cs_gset:cpn {semantex_external_text_#1} {#2}
+  \cs_gset:cpn {semantex_external_url_#1} {#3}
+}
+% PDF physical pages require hyperref's page option. A URI fragment page=N
+% alone is interpreted as a named GoToR destination, not a physical page.
+\NewDocumentCommand \SemanTeXDeclarePDFPageKey { m m } {
+  \cs_gset:cpn {semantex_external_page_#1} {#2}
+}
+\cs_new_protected:Npn \semantex_external_page_link:nnn #1#2#3 {
+  \href[page=#2]{#1}{#3}
+}
+\cs_generate_variant:Nn \semantex_external_page_link:nnn {vvn}
+\cs_new_protected:Npn \semantex_external_link:nn #1#2 {
+  \cs_if_exist:cTF {semantex_external_page_#1}
+    {\semantex_external_page_link:vvn
+      {semantex_external_url_#1}{semantex_external_page_#1}{#2}}
+    {\exp_args:Nv \href {semantex_external_url_#1}{#2}}
+}
+\NewDocumentCommand \SemanTeXDeclareGapKey { m m m } {
+  \cs_gset:cpn {semantex_gap_label_#1} {#2}
+  \cs_gset:cpn {semantex_gap_reason_#1} {#3}
+}
+% Runtime kinds come from the graph's actual semantic environments. The aux
+% number and hyperlink anchor remain those written by the original declaration.
+\NewDocumentCommand \SemanTeXDeclareKindKey { m m } {
+  \cs_gset:cpn {semantex_kind_#1} {#2}
+}
+\cs_new_protected:Npn \semantex_local_text:n #1 {
+  \cs_if_exist:cTF {semantex_kind_#1}
+    {\use:c {semantex_kind_#1}\nobreakspace\ref*{semantex@#1}}
+    {\autoref*{semantex@#1}}
+}
+% amsmath may hand its stored display label back through the public wrapper.
+% @ is excluded from authored graph IDs, so this internal prefix is unambiguous.
+\cs_new:Npn \semantex_aux_label:n #1 {
+  \str_if_eq:eeTF {\str_range:nnn {#1}{1}{9}} {semantex@}
+    {#1} {semantex@\semantex_label_key:n {#1}}
+}
 \AddToHook{begindocument/end}{
   \NewCommandCopy \semantex_original_label \label
-  \RenewDocumentCommand \label { o m } { \semantex_original_label{#2} }
+  \RenewDocumentCommand \label { o m } {
+    \exp_args:Ne \semantex_original_label {\semantex_aux_label:n {#2}}
+  }
   \NewCommandCopy \semantex_display_label \label@in@display
-  \RenewDocumentCommand \label@in@display { o m } { \semantex_display_label{#2} }
+  \RenewDocumentCommand \label@in@display { o m } {
+    \exp_args:Ne \semantex_display_label {\semantex_aux_label:n {#2}}
+  }
 }
-
+\NewDocumentCommand \SemanTeXProofTargetKey { m m } {
+  \cs_if_exist:cF {semantex_authoritative_proof_#1}
+    {\cs_gset:cpn {semantex_proof_target_#1} {#2}}
+}
+% Read pre-key aux records without rebinding them to the current context.
 \NewDocumentCommand \SemanTeXProofTarget { m m } {
-  \cs_gset:cpn { semantex_proof_target_#1 } {#2}
+  \exp_args:Nee \SemanTeXProofTargetKey {\semantex_key:n{#1}} {\semantex_key:n{#2}}
 }
-\cs_new_protected:Npn \semantex_proof_text:n #1 { Proof~of~\autoref*{#1} }
+\NewDocumentCommand \SemanTeXDeclareProofTargetKey { m m } {
+  \cs_gset:cpn {semantex_authoritative_proof_#1} {}
+  \cs_gset:cpn {semantex_proof_target_#1} {#2}
+}
+\cs_new_protected:Npn \semantex_external_text:n #1 {
+  \use:c {semantex_external_text_#1}
+}
+\cs_new_protected:Npn \semantex_unavailable:n #1 {
+  \cs_if_exist:cTF {semantex_gap_label_#1}
+    { [Unavailable~source:\space \use:c {semantex_gap_label_#1};\space
+      \use:c {semantex_gap_reason_#1}]
+      \PackageWarning{semantex}{Unavailable~source~key~#1} }
+    { [Unresolved~reference:\space
+      \exp_args:Ne \nolinkurl {\tl_to_str:V \l_semantex_reference_literal_tl}]
+      \PackageWarning{semantex}{Unresolved~reference~\tl_to_str:V \l_semantex_reference_literal_tl} }
+}
+\cs_new_protected:Npn \semantex_proof_text:n #1 {
+  Proof~of\space
+  \cs_if_exist:cTF {r@semantex@#1} {\semantex_local_text:n {#1}}
+    {\cs_if_exist:cTF {semantex_external_url_#1}
+      {\semantex_external_text:n {#1}} {\semantex_unavailable:n {#1}}}
+}
+\cs_new_protected:Npn \semantex_local_ref:n #1 {
+  \cs_if_exist:cTF {semantex_proof_target_#1}
+    {\hyperref[semantex@#1]{\exp_args:Nv \semantex_proof_text:n {semantex_proof_target_#1}}}
+    {\cs_if_exist:cTF {semantex_kind_#1}
+      {\hyperref[semantex@#1]{\semantex_local_text:n {#1}}}
+      {\autoref{semantex@#1}}}
+}
+\cs_new_protected:Npn \semantex_resolved_ref:n #1 {
+  \cs_if_exist:cTF {semantex_gap_label_#1}
+    {\semantex_unavailable:n {#1}}
+    {\cs_if_exist:cTF {r@semantex@#1} {\semantex_local_ref:n {#1}}
+      {\cs_if_exist:cTF {semantex_external_url_#1}
+        {\semantex_external_link:nn {#1}
+          {\cs_if_exist:cTF {semantex_proof_target_#1}
+            {\exp_args:Nv \semantex_proof_text:n {semantex_proof_target_#1}}
+            {\semantex_external_text:n {#1}}}}
+        {\semantex_unavailable:n {#1}}}}
+}
 \cs_new_protected:Npn \semantex_visible_ref:n #1 {
-  \cs_if_exist:cTF { semantex_proof_target_#1 }
-    { \hyperref[#1]{\exp_args:Nv \semantex_proof_text:n {semantex_proof_target_#1}} }
-    { \autoref{#1} }
+  \group_begin:
+  \tl_set:Nn \l_semantex_reference_literal_tl {#1}
+  \exp_args:Ne \semantex_resolved_ref:n {\semantex_reference_key:n {#1}}
+  \group_end:
 }
-\NewDocumentCommand \mention { m } { \semantex_visible_ref:n {#1} }
-\NewDocumentCommand \use { m } { \semantex_visible_ref:n {#1} }
+\NewDocumentCommand \mention { m } {\semantex_visible_ref:n {#1}}
+\NewDocumentCommand \use { m } {\semantex_visible_ref:n {#1}}
 \NewDocumentCommand \hiddenmention { m } {}
 \NewDocumentCommand \hiddenuse { m } {}
 
@@ -46,8 +181,14 @@
   \tl_if_empty:NF \l_semantex_proof_label_tl {
     \phantomsection
     \exp_args:NV \label \l_semantex_proof_label_tl
+    % Resolve while still inside the document's scope. The aux file is read
+    % before any document context; its keys must already be graph identities.
+    \tl_set:Nx \l_semantex_proof_label_tl
+      {\exp_args:NV \semantex_label_key:n \l_semantex_proof_label_tl}
+    \tl_set:Nx \l_semantex_proof_result_tl
+      {\exp_args:NV \semantex_reference_key:n \l_semantex_proof_result_tl}
     \protected@write\@auxout{}{
-      \string\SemanTeXProofTarget{\l_semantex_proof_label_tl}{\l_semantex_proof_result_tl}
+      \string\SemanTeXProofTargetKey{\l_semantex_proof_label_tl}{\l_semantex_proof_result_tl}
     }
   }
 } { \semantex_original_endproof }
@@ -71,4 +212,6 @@
   \group_end:
 }
 \ExplSyntaxOff
+% The build command regenerates these scoped bindings before compiling.
+\InputIfFileExists{semantex-runtime.tex}{}{}
 \endinput

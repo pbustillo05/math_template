@@ -1,6 +1,38 @@
 {
-  "files.exclude": {"**/__pycache__": true},
-  "search.exclude": {"build/**": true,"archived/**": true},
+  "files.exclude": {
+    "**/__pycache__": true
+  },
+  "search.exclude": {
+    "build/**": true,
+    "archived/**": true
+  },
   "latex-workshop.latex.autoBuild.run": "never",
-  "latex-workshop.view.pdf.viewer": "tab"
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "checked-project-build",
+      "command": "python3",
+      "args": [
+        "%WORKSPACE_FOLDER%/scripts/build_latex.py",
+        "--source",
+        "%DOC_EXT%"
+      ],
+      "env": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      }
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "Checked project build",
+      "tools": [
+        "checked-project-build"
+      ]
+    }
+  ],
+  "latex-workshop.latex.recipe.default": "first",
+  "latex-workshop.latex.rootFile.useSubFile": true,
+  "latex-workshop.latex.outDir": "%WORKSPACE_FOLDER%/build/latex/%RELATIVE_DIR%",
+  "latex-workshop.latex.clean.subfolder.enabled": false,
+  "latex-workshop.latex.rootFile.doNotPrompt": false
 }

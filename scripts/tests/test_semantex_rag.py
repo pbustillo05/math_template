@@ -85,6 +85,9 @@ Proof body.
         backend = FakeEmbedder()
         first = index.build(Graph(self.root), backend)
         self.assertEqual(first["units"], first["embedded"])
+        before = index.path.stat().st_mtime_ns
+        self.assertEqual(index.build(Graph(self.root), backend)["embedded"], 0)
+        self.assertEqual(index.path.stat().st_mtime_ns, before)
         (self.root / "notes/n12.tex").rename(self.root / "notes/moved.tex")
         (self.root / "notes/n13.tex").unlink()
         path = self.root / "notes/n14.tex"
@@ -102,6 +105,22 @@ Proof body.
         rebuilt = index.build(Graph(self.root), backend)
         self.assertEqual(rebuilt["units"], rebuilt["embedded"])
 
+    def test_retained_proposition_abbreviation_is_retrievable(self):
+        self.write("references/Q/paper.tex", r"""\newtheorem{propn}{Proposition}
+\section{Introduction}\label{intro}
+\begin{propn}\label{natural-transformations}
+Natural transformations are maps of the specified bimodules.
+\end{propn}
+""")
+        graph = Graph(self.root)
+        index = VectorIndex(self.root, "fixture", 3)
+        index.build(graph, FakeEmbedder())
+        _, inventory = index.inventory()
+        self.assertIn("Q:natural-transformations", inventory)
+        self.assertNotIn("Q:intro", inventory)
+        bundle = context_bundle(graph, ["Q:natural-transformations"], 0, 1000, set(graph.nodes))
+        self.assertIn("Natural transformations", bundle["blocks"][0]["latex"])
+
     def test_stale_index_and_context_budget(self):
         index = VectorIndex(self.root, "fixture", 3)
         index.build(Graph(self.root), FakeEmbedder())
@@ -114,3 +133,19 @@ Proof body.
         self.assertIn("prf:target", {block["id"] for block in bundle["blocks"]})
         self.assertLessEqual(bundle["source_chars"], 400)
         self.assertEqual(self.cli_json("context", "lem:target", "--max-chars", "1", "--json")["blocks"], [])
+
+    def test_cli_updates_changed_inputs_and_resident_ranking_agrees(self):
+        backend = FakeEmbedder(1024)
+        with patch("manuscript_graph.EmbeddingServer", return_value=backend):
+            self.cli_json("rag", "build")
+            before = len(backend.calls)
+            self.write("notes/n0.tex", r"\begin{lemma}\label[Changed input.]{lem:n00}Example.\end{lemma}")
+            self.cli_json("neighbors", "lem:target", "--json")
+            self.assertEqual(len(backend.calls), before + 1)
+        graph = Graph(self.root)
+        focused = set(graph.nodes)
+        baseline = VectorIndex(self.root, "light", 1024).rank(graph, focused, label="lem:target")
+        resident = VectorIndex(self.root, "light", 1024, resident=True).rank(graph, focused, label="lem:target")
+        self.assertEqual([label for label, _ in resident], [label for label, _ in baseline])
+        for (_, accelerated), (_, scalar) in zip(resident, baseline):
+            self.assertAlmostEqual(accelerated, scalar, places=13)

@@ -2,7 +2,7 @@
   "name": "semantex-navigation",
   "displayName": "SemanTeX Research Navigation",
   "publisher": "math-template",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Exact LaTeX environment hovers, label navigation and dependency trees for a math research workspace.",
   "engines": {"vscode": "^1.85.0"},
   "categories": ["Programming Languages"],

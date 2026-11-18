@@ -1,17 +1,14 @@
 """Pinned, local embedding models and the llama.cpp backend."""
 from contextlib import contextmanager
+from functools import lru_cache
 import hashlib
-from http.client import HTTPConnection
 import json
 import os
 import shutil
-import socket
 import subprocess
 import sys
 import tempfile
 import time
-from urllib.request import urlopen
-from uuid import uuid4
 
 DEFAULT = "light"
 RUNTIME_BUILD = "b12359"
@@ -71,6 +68,8 @@ def model_setup(root, name):
     path = model_path(root, name)
     if path.is_file() and file_hash(path) == model["sha256"]:
         return path
+    from urllib.request import urlopen
+
     path.parent.mkdir(parents=True, exist_ok=True)
     owner = model.get("owner", "Qwen")
     url = f"https://huggingface.co/{owner}/{model['model']}-GGUF/resolve/{model['revision']}/{path.name}"
@@ -111,8 +110,9 @@ class EmbeddingServer:
         self.gpu_layers = os.environ.get("SEMANTEX_GPU_LAYERS", "auto")
         if self.gpu_layers != "auto" and not self.gpu_layers.isdecimal():
             raise ValueError("SEMANTEX_GPU_LAYERS must be auto or a nonnegative integer")
+        # The runtime reserves a context position beyond the 512-token input budget.
         self.arguments = ["--embeddings", "--pooling", self.model.get("pooling", "last"), "--parallel", "1",
-                          "--ctx-size", str(LIMIT), "--batch-size", str(LIMIT), "--ubatch-size", str(LIMIT),
+                          "--ctx-size", str(LIMIT + 1), "--batch-size", str(LIMIT), "--ubatch-size", str(LIMIT),
                           "--n-gpu-layers", self.gpu_layers]
 
     @property
@@ -121,6 +121,8 @@ class EmbeddingServer:
                     options=self.arguments, query_instruction=INSTRUCTION)
 
     def request(self, route, data=None):
+        from http.client import HTTPConnection
+
         connection = HTTPConnection("127.0.0.1", self.port, timeout=120)
         try:
             headers = {"Authorization": "Bearer " + self.key, "Content-Type": "application/json"}
@@ -143,12 +145,15 @@ class EmbeddingServer:
             raise ValueError(f"run scripts/semantex rag setup --profile {self.name}")
         if file_hash(self.path) != self.model["sha256"]:
             raise ValueError(f"invalid weights for {self.name}; run rag setup")
+        import socket
+        from uuid import uuid4
+
         with socket.socket() as reservation:
             reservation.bind(("127.0.0.1", 0))
             self.port = reservation.getsockname()[1]
         self.key = uuid4().hex
         command = [self.executable, "--model", str(self.path), "--host", "127.0.0.1",
-                   "--port", str(self.port), "--api-key", self.key, *self.arguments]
+                   "--port", str(self.port), "--api-key", self.key, "--log-verbosity", "3", *self.arguments]
         with tempfile.TemporaryFile() as log, subprocess.Popen(command, stdout=log, stderr=log) as process:
             try:
                 deadline = time.monotonic() + 120
@@ -158,12 +163,16 @@ class EmbeddingServer:
                             break
                     except (OSError, ValueError):
                         pass
-                    time.sleep(0.25)
+                    time.sleep(0.05)
                 else:
                     log.seek(0, os.SEEK_END)
                     log.seek(max(0, log.tell() - 3000))
                     raise ValueError("llama-server did not become ready:\n" + log.read().decode(errors="replace"))
                 self.active = True
+                self.pid = process.pid
+                startup_log = os.pread(log.fileno(), 65536, 0).decode(errors="replace")
+                self.offload = next((line.strip() for line in reversed(startup_log.splitlines())
+                                     if "offloaded" in line and "layers to GPU" in line), None)
                 yield self
             finally:
                 self.active = False
@@ -180,3 +189,38 @@ class EmbeddingServer:
         tokens = self.request("/tokenize", {"content": text, "add_special": True, "parse_special": False})["tokens"]
         result = self.request("/v1/embeddings", {"input": tokens[:LIMIT]})
         return result["data"][0]["embedding"]
+
+
+class ResidentModel:
+    """Keep one llama.cpp session alive for the worker across embeddings."""
+    def __init__(self, key, backend):
+        self.key = key
+        self.backend = backend
+        self.session = None
+        self.query_vector = lru_cache(maxsize=64)(lambda text: backend.vector(text, query=True))
+
+    @property
+    def signature(self):
+        return self.backend.signature
+
+    @contextmanager
+    def running(self):
+        from http.client import HTTPException
+
+        if self.session is None:
+            session = self.backend.running()
+            session.__enter__()
+            self.session = session
+        try:
+            yield self
+        except (OSError, HTTPException):
+            self.close()
+            raise
+
+    def vector(self, text, query=False):
+        return self.query_vector(text) if query else self.backend.vector(text)
+
+    def close(self):
+        if self.session is not None:
+            self.session.__exit__(None, None, None)
+            self.session = None

@@ -133,6 +133,14 @@ class ReferenceTests(unittest.TestCase):
         self.assertEqual(labels['two'], 'Alp24b')
         self.assertEqual(labels['three'], 'BA24')
 
+    def test_rekey_follows_locators_in_guides_and_skills(self):
+        for directory in ('docs/methods', '.agents/skills/author'):
+            guide = self.root / directory / 'guide.md'
+            guide.parent.mkdir(parents=True)
+            guide.write_text('Read references/Old24/audit/README.md')
+            changes = refs.replacements(self.root, {'Old24': 'New24'})
+            self.assertEqual(changes[guide][1], 'Read references/New24/audit/README.md')
+
     def test_collision_chain_rewrites_are_simultaneous(self):
         content = r'\cite{AB24a} AB24a:lemma references/AB24b/source.tex'
         self.assertEqual(refs.rewrite_tokens(content, {'AB24a': 'AB24b', 'AB24b': 'AB24c'}),

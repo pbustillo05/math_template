@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "contexts": {
+    "ctx:40653d8b69f74787967006b7f4cd5ae2": {
+      "file": "draft/main.tex",
+      "labels": {},
+      "references": {}
+    },
+    "ctx:c930e4efa7c14257816f9774c9b55c4a": {
+      "file": "draft/sections/example.tex",
+      "labels": {
+        "sec:idempotent": "sec:idempotent",
+        "def:idempotent": "def:idempotent",
+        "lem:image-fixed": "lem:image-fixed",
+        "prf:image-fixed": "prf:image-fixed",
+        "rem:empty-set": "rem:empty-set"
+      },
+      "references": {}
+    },
+    "ctx:3f5eac2c10f8416a9587f51f9db2f98e": {
+      "file": "notes/example/units.tex",
+      "labels": {
+        "lem:notes-image-fixed": "lem:notes-image-fixed",
+        "prf:notes-image-fixed": "prf:notes-image-fixed"
+      },
+      "references": {}
+    }
+  }
+}

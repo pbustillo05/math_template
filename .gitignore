@@ -16,4 +16,8 @@ build/
 *.synctex.gz
 # PDFs and archives in references are source evidence and intentionally trackable.
 
+# Generated manuscript and note PDFs.
+/draft/**/*.pdf
+/notes/**/*.pdf
+
 lean/.lake/

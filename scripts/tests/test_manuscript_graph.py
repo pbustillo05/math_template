@@ -61,6 +61,19 @@ class ManuscriptGraphTests(unittest.TestCase):
             records[node] = {"status": "accepted", "author": "author-agent", "reviews": reviews}
         self.write("workflow/reviews.json", json.dumps({"schema_version": 1, "records": records}))
 
+    def test_shared_skill_changes_invalidate_existing_reviews(self):
+        self.write("notes/unit.tex", r"\begin{definition}\label[Fixture description.]{def:base}Base.\end{definition}")
+        for path in (".agents/skills/source-auditor/SKILL.md",
+                     ".agents/skills/research-review/references/review.md"):
+            self.write(path, "Original research guidance.")
+        self.accept(["def:base"])
+        self.assertEqual(self.graph().status("def:base"), "accepted")
+        self.write(".agents/skills/source-auditor/SKILL.md", "Revised source-matching obligations.")
+        self.assertEqual(self.graph().status("def:base"), "stale")
+        self.accept(["def:base"])
+        self.write(".agents/skills/research-review/references/review.md", "Revised reporting obligations.")
+        self.assertEqual(self.graph().status("def:base"), "stale")
+
     def test_proof_attachment_dependency_direction_and_order(self):
         self.write("notes/unit.tex", r"""
 \begin{definition}\label[Fixture description.]{def:base} Base.\end{definition}

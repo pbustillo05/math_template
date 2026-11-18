@@ -24,6 +24,20 @@ function inside(root, relative) {
     return target;
 }
 
+function previewSource(text, block) {
+    if (block.start === undefined) {
+        return text.split(/\r\n|[\n\r\v\f\u001c-\u001e\u0085\u2028\u2029]/)[block.start_line - 1] || '';
+    }
+    // The index counts Unicode code points. JavaScript counts UTF-16 units.
+    let {start, end} = block;
+    for (const pair of text.matchAll(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g)) {
+        if (pair.index >= end) break;
+        if (pair.index < start) start++;
+        end++;
+    }
+    return text.slice(start, end);
+}
+
 class Project {
     constructor(folder, diagnostics, changed) {
         this.folder = folder;
@@ -32,6 +46,7 @@ class Project {
         this.changed = changed;
         this.nodes = new Map();
         this.references = [];
+        this.overlays = {};
         this.generation = 0;
         this.pending = null;
     }
@@ -55,13 +70,15 @@ class Project {
         const python = vscode.workspace.getConfiguration('semantex', this.folder.uri).get('pythonPath', 'python3');
         this.pending = new Promise(resolve => {
             execFile(python, ['-B', path.join(this.root, 'scripts/manuscript_graph.py'), '--root', this.root,
-                '--overlays', overlayPath, 'editor-index'], {cwd: this.root, maxBuffer: 64 * 1024 * 1024, timeout: 30000},
+                '--overlays', overlayPath, 'editor-index', '--source-ranges'],
+                {cwd: this.root, maxBuffer: 64 * 1024 * 1024, timeout: 30000},
             (error, stdout, stderr) => {
                 try {
                     if (generation !== this.generation) return;
                     const data = error ? {nodes: [], references: [], errors: [stderr || error.message]} : JSON.parse(stdout);
                     this.nodes = new Map(data.nodes.map(n => [n.id, n]));
                     this.references = data.references;
+                    this.overlays = overlays;
                     const grouped = new Map();
                     for (const message of data.errors || []) {
                         const match = /^(.*?\.tex):(\d+)(?::(\d+))?:?\s*(.*)$/.exec(message);
@@ -94,6 +111,22 @@ class Project {
         return this.pending;
     }
     async ready() { if (this.pending) await this.pending; }
+    async preview(block, files) {
+        if (block.latex !== undefined) return block.latex;
+        if (!files.has(block.file)) {
+            let text = this.overlays[block.file];
+            if (text === undefined) {
+                const bytes = await fs.promises.readFile(inside(this.root, block.file));
+                try {
+                    text = new TextDecoder('utf-8', {fatal: true, ignoreBOM: true}).decode(bytes);
+                } catch {
+                    text = bytes.toString('latin1');
+                }
+            }
+            files.set(block.file, text);
+        }
+        return previewSource(files.get(block.file), block);
+    }
     dispose() { clearTimeout(this.timer); this.generation++; }
 }
 
@@ -138,7 +171,9 @@ function activate(context) {
     const selector = [{language: 'latex', scheme: 'file'}, {language: 'tex', scheme: 'file'}];
     context.subscriptions.push(diagnostics, emitter,
         vscode.workspace.onDidChangeWorkspaceFolders(discover),
-        vscode.workspace.onDidChangeTextDocument(e => projectFor(e.document.uri)?.schedule()),
+        vscode.workspace.onDidChangeTextDocument(e => {
+            if (e.contentChanges.length) projectFor(e.document.uri)?.schedule();
+        }),
         vscode.workspace.onDidSaveTextDocument(doc => projectFor(doc.uri)?.schedule()),
         vscode.workspace.onDidChangeConfiguration(e => {
             if (e.affectsConfiguration('semantex.pythonPath')) for (const p of projects.values()) void p.refresh();
@@ -146,15 +181,21 @@ function activate(context) {
         vscode.languages.registerHoverProvider(selector, {async provideHover(doc, pos) {
             const found = await lookup(doc, pos);
             if (!found) return undefined;
-            const {node, token} = found;
+            const {project, node, token} = found;
             const md = new vscode.MarkdownString();
             md.appendText(`${node.id} · ${node.status || 'unreviewed'}${node.virtual ? ' · virtual source label' : ''}\n\n`);
             if (node.description) md.appendText(node.description + '\n\n');
             md.appendText(`Prerequisites: ${(node.dependencies || []).join(', ') || 'none declared'}\n\n`);
+            const files = new Map();
             for (const block of node.blocks || []) {
-                md.appendText(`${block.file}:${block.start_line}–${block.end_line}\n\n`);
-                // Bound hover size; exact full blocks remain available through the CLI.
-                md.appendCodeblock(block.latex.slice(0, 16000) + (block.latex.length > 16000 ? '\n% … use the CLI for the full unit' : ''), 'latex');
+                try {
+                    const latex = await project.preview(block, files);
+                    const truncated = block.truncated || latex.length > 16000;
+                    md.appendText(`${block.file}:${block.start_line}–${block.end_line}\n\n`);
+                    md.appendCodeblock(latex.slice(0, 16000) + (truncated ? '\n% … use the CLI for the full unit' : ''), 'latex');
+                } catch {
+                    // The source may have moved while its refreshed index is pending.
+                }
             }
             return new vscode.Hover(md, token.range);
         }}),
@@ -225,4 +266,4 @@ function activate(context) {
     discover();
 }
 
-module.exports = {activate, labelAt, inside};
+module.exports = {activate, labelAt, inside, previewSource};

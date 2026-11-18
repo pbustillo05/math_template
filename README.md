@@ -17,7 +17,7 @@ make check
 make pdf
 ```
 
-Open `build/latex/draft/main.pdf`.
+Open `draft/main.pdf` (and temporary build logs under `build/latex/draft/`).
 Rename the title/author in `draft/main.tex`, replace `draft/sections/example.tex`, and fill in `workflow/CURRENT.md`.
 If starting an independent repository, change `origin` to your own repository before pushing.
 
@@ -26,14 +26,16 @@ If starting an independent repository, change `origin` to your own repository be
 | Path | Purpose |
 | --- | --- |
 | `draft/` | Polished user-facing LaTeX; shared setup in `preamble/` |
-| `notes/` | Agents' organized workspace: calculations, failed attempts, experiments, ledgers |
+| `notes/` | Research notes organized by topic: `.tex` SemanTeX units alongside Markdown ledgers |
 | `references/` | All relevant papers, exact DOI metadata, pinned sources and separate audit notes |
-| `scripts/semantex` | Exact environment retrieval, dependency traversal, review freshness |
+| `docs/` | Writing-research survey and SemanTeX tooling reports |
+| `scripts/semantex` | Exact environment retrieval, dependency traversal, cached indexing, and review freshness |
 | `tools/vscode-semantex/` | Label hover, Go to Definition, references and dependency tree |
 | `writing-style.md` | Mathematical exposition and aesthetics |
-| `agents/SEMANTEX.md` | Separate LaTeX/code/annotation contract |
-| `agents/` | Bounded author, proof, counterexample, source and style review protocols |
-| `workflow/` | Current state, queue and review evidence |
+| `workflow/SEMANTEX.md` | SemanTeX authoring, retrieval, graph semantics, builds, and search |
+| `workflow/BUILDING.md` | Checked LaTeX build recipes and diagnostics |
+| `.agents/skills/` | Bounded author, proof, counterexample, source, style, and paper-conversion skills (`CLAUDE.md` and `.claude/skills` point here and to `AGENTS.md`) |
+| `workflow/` | Current state, queue, review evidence, links, and label/context registries |
 
 ## Navigate mathematics
 
@@ -44,18 +46,19 @@ scripts/semantex deps lem:image-fixed --depth all --tree
 scripts/semantex rdeps def:idempotent --depth 1
 scripts/semantex why lem:image-fixed def:idempotent
 scripts/semantex backrefs def:idempotent --json
+scripts/semantex backrefs lem:image-fixed --markdown
 scripts/semantex graph --format mermaid
 scripts/semantex export --output build/semantex/index.json
 ```
 
 Logical arrows point **from the result to its prerequisite**.
 Proof attachments are structural and do not create premise edges.
-Queries rebuild from saved source every time; the parser never executes TeX or infers a proof.
-See [the annotation and CLI guide](agents/SEMANTEX.md).
+Queries use the persistent incremental cache under `build/semantex/` and refresh automatically from saved source; the parser never executes TeX or infers a proof.
+See [the SemanTeX manual](workflow/SEMANTEX.md).
 
 ## Find related mathematics
 
-Lexical search and graph navigation work on a fresh checkout. Follow the [semantic setup guide](agents/SEMANTEX.md#local-semantic-retrieval) for pinned model profiles and runtime setup. Then try:
+Lexical search and graph navigation work on a fresh checkout. Follow the [semantic setup guide](workflow/SEMANTEX.md#local-semantic-retrieval) for pinned model profiles and runtime setup. Then try:
 
 ```sh
 scripts/semantex search "why do projection images consist of fixed points" --mode semantic
@@ -78,7 +81,7 @@ python3 scripts/references.py verify
 
 The scripts negotiate BibTeX through the DOI resolver, retain the exact response, compute keys with the real `alpha.bst`, and safely extract source without altering it.
 Network services can change their metadata; reproducibility comes from the **retained response and hashes**, not a promise that fresh API calls are identical.
-PDF fallback, DOI gaps, collision migration, and exact citation locators are covered in [references/README.md](references/README.md).
+PDF fallback, DOI gaps, collision migration, and exact citation locators are covered in [references/README.md](references/README.md) and [the reference source guide](references/REFERENCE-VIEWS.md).
 
 ## VS Code
 
@@ -96,18 +99,19 @@ See [extension details](tools/vscode-semantex/README.md).
 
 ## Checks and builds
 
-- `make check`: source graph, reference integrity, structural checks and regression tests. No network.
-- `make pdf`: compile the main manuscript and standalone section into ignored `build/latex/` with SyncTeX.
+- `make check`: source graph, reference integrity, structural checks and regression tests (`scripts/tests/` and `tests/`). No network.
+- `make test`: run the unit test suites (`scripts/tests/` and `tests/`).
+- `make pdf`: compile the main manuscript and standalone section into ignored `build/latex/` with SyncTeX and update `draft/main.pdf`.
 - `make bibliography`: compile `references/cite-all.tex` into `build/latex/references/`.
 - `make graph`: JSON index plus Mermaid and Graphviz diagrams under `build/semantex/`.
 - `make release TARGET=lem:image-fixed`: require fresh independent reviews for this result's entire support closure. The untouched demo intentionally fails this gate.
 
 A successful build is not mathematical verification.
-Read [AGENTS.md](AGENTS.md) and [the review protocol](agents/PROTOCOL.md) before research or drafting.
+Read [AGENTS.md](AGENTS.md) and [the review skill](.agents/skills/research-review/SKILL.md) before research or drafting.
 The template supplies review roles and evidence checks; it does not pretend that an agent has reviewed its own output independently.
 
 ## Origins
 
-The structural SemanTeX parser and BibTeX transport were adapted from the sibling `stratified` project.
+The structural SemanTeX parser and BibTeX transport were adapted from the sibling `stratified` project and further developed in `moduli`.
 BourbakIA informed the separation of bibliography acquisition, semantic indexing, editor support, and bounded critique roles.
 See [PROVENANCE.md](PROVENANCE.md) for adaptation boundaries and upstream technical documentation.

@@ -7,7 +7,7 @@ const path = require('node:path');
 const Module = require('node:module');
 const original = Module._load;
 Module._load = function(name, ...args) { return name === 'vscode' ? {} : original.call(this, name, ...args); };
-const {inside, labelAt} = require('./extension');
+const {inside, labelAt, previewSource} = require('./extension');
 Module._load = original;
 
 test('source navigation rejects traversal and symlink escapes', () => {
@@ -21,6 +21,12 @@ test('source navigation rejects traversal and symlink escapes', () => {
         fs.symlinkSync(path.join(temp, 'outside.tex'), path.join(root, 'link.tex'));
         assert.throws(() => inside(root, 'link.tex'), /escapes/);
     } finally { fs.rmSync(temp, {recursive: true, force: true}); }
+});
+
+test('hover reads source positions in Unicode code points', () => {
+    assert.equal(previewSource('😀a😀bc', {start: 1, end: 4}), 'a😀b');
+    assert.equal(previewSource('😀a😀bc', {start: 3, end: 4}), 'b');
+    assert.equal(previewSource('one\r\ntwo\nthree', {start_line: 2}), 'two');
 });
 
 test('label token recognizes namespaced alpha keys and virtual environment IDs', () => {

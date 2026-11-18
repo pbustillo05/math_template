@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
-"""SemanTeX: exact retrieval and navigation for the manuscript and bestiary."""
+"""SemanTeX: exact retrieval and navigation across the research corpus."""
 import sqlite3
 import subprocess
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from manuscript_graph import main
+from semantex_service import query
 try:
-    raise SystemExit(main())
+    result = query(Path(__file__).resolve().parents[1], sys.argv[1:])
+    if result is None:
+        from manuscript_graph import main
+        result = main()
+    raise SystemExit(result)
 except (ValueError, OSError, sqlite3.Error, subprocess.SubprocessError) as exc:
     print(f"error: {exc}", file=sys.stderr)
     raise SystemExit(1)

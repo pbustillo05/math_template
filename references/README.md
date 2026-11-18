@@ -36,7 +36,7 @@ They never execute imported TeX.
 - `KEY/`: one directory per paper, using the real `alpha.bst` label for the entire corpus.
 - `KEY/metadata/doi-response.bib`: exact API response; `doi.json` records request/resolved URLs and response hash.
 - `KEY/metadata/source.archive`: exact original arXiv payload; `source.json` records format, identifier, URLs and hash.
-- `KEY/*.tex` and supporting files: safely extracted exact bytes; a PDF-only paper instead has `original.pdf`.
+- `KEY/*.tex` and supporting files: safely extracted exact bytes; a PDF-only paper instead has the exact filename specified by `metadata/source.json`, commonly `paper.pdf`.
 - `KEY/audit/`: editable reading notes, hypothesis matching, errata and claim ledgers, excluded from payload hashes.
 
 Never edit retained payloads, even to repair compilation or insert labels.
@@ -72,11 +72,12 @@ A deliberate version replacement requires a separately reviewed migration retain
 
 ## Reading and dependency navigation
 
-Use the `tex-to-semantex` repository skill to create provenance-checked LaTeX overlays and report annotation coverage.
-See `agents/SEMANTEX.md` for exact `\cite` locators and checked local `src:` applications.
+Use the [reference source guide](REFERENCE-VIEWS.md) for current navigation tools and the [whole-paper SemanTeX conversion design](REFERENCE-VIEWS.md#proposed-semantex-editions).
+Use the `tex-to-semantex` repository skill when creating or extending a provenance-checked LaTeX overlay.
+See [the SemanTeX reference](../workflow/SEMANTEX.md) for exact `\cite` locators and checked local `src:` applications.
 The same CLI retrieves upstream labels in the `KEY:upstream-label` namespace.
 Generated virtual labels and conservative flattening are documented in `REFERENCE-VIEWS.md`.
 Upstream references are a mention graph unless a logical dependency was explicitly declared; do not promote citation links into inferred proof premises.
 
-Before use, record the statement, exact version and locator, matched hypotheses/conventions, relevant proof dependencies, later-version/errata checks and open gaps under `KEY/audit/`.
+In audit notes, identify each mathematical entry by its label. For unlabeled retained TeX, use the indexed virtual label or assign a LaTeX label in the audit overlay. Only a bibliographic source for which the corresponding TeX is unavailable may be cited by key and physical PDF page. Record the version, hypothesis and convention checks, proof dependencies, errata and open gaps under `KEY/audit/`.
 Compile retained papers only in scratch copies, with shell escape disabled, and keep compiler compatibility changes out of the original.

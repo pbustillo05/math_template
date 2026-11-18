@@ -1,0 +1,8 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{bibliography-compat}[2026/11/17 DOI bibliography display compatibility]
+\RequirePackage{amsmath,amssymb}
+% The retained DOI response uses \varTheta in a title. Standard pdfLaTeX
+% lacks that typographic variant. Keep the immutable DOI and generated BibTeX
+% bytes intact; render the unsupported variant as the ordinary capital theta.
+\providecommand{\varTheta}{\Theta}
+\endinput

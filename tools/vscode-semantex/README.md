@@ -15,7 +15,7 @@ Features:
 - **SemanTeX: Refresh Index** rebuilds all open project indexes.
 - Structural problems appear in the Problems panel; an invalid index clears navigation instead of serving stale results.
 
-The extension calls `python3 -B scripts/manuscript_graph.py editor-index` directly, without a shell or an HTTP service.
+The extension calls `python3 -B scripts/manuscript_graph.py editor-index --source-ranges` directly. It transfers source positions and reads the hovered blocks on demand.
 Set `semantex.pythonPath` to another Python 3.10+ executable if needed.
 Each project has its own index in multi-root workspaces.
 Saved edits trigger refresh; unsaved open `.tex` files are supplied as an overlay, so hover and diagnostics see current editor text.

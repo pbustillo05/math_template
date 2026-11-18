@@ -201,9 +201,47 @@ def verify(root, *, alpha=True):
         if meta['sha256'] != sha(data) or meta['doi'] != r['doi']:
             raise ValueError('DOI provenance mismatch')
         source = json.loads((directory / 'metadata/source.json').read_text())
-        original = directory / ('metadata/source.archive' if r.get('arxiv') else 'original.pdf')
-        if source['sha256'] != sha(original.read_bytes()):
-            raise ValueError('source acquisition hash mismatch')
+        if source.get('kind') == 'inherited-source-tree':
+            # A migration may retain an exact, per-file-locked tree whose original
+            # acquisition archive is unavailable. This is an explicit provenance
+            # gap, never a fabricated archive hash or a fresh acquisition receipt.
+            if not source.get('acquisition_gap') or not r.get('source_gap'):
+                raise ValueError('inherited source tree requires an explicit acquisition gap')
+            inherited = source.get('inherited_file_sha256')
+            if not isinstance(inherited, dict) or not inherited:
+                raise ValueError('inherited source tree requires original per-file hashes')
+            payload = {name: digest for name, digest in saved['files'].items()
+                       if not name.startswith(('metadata/', 'audit/'))}
+            if not payload:
+                raise ValueError('inherited source tree is empty')
+            exclusions = set(source.get('excluded_files', []))
+            # Imports may have additional provenance transcripts; every retained
+            # file covered by the inherited lock must still match it exactly.
+            matched = 0
+            for name, expected in inherited.items():
+                if name in exclusions:
+                    continue
+                if name not in payload:
+                    raise ValueError('inherited source file missing without a recorded exclusion')
+                if name in payload:
+                    if payload[name] != expected:
+                        raise ValueError('inherited source file hash mismatch')
+                    matched += 1
+            if not matched:
+                raise ValueError('inherited source tree has no hash-matched original files')
+        else:
+            original_name = ('metadata/source.archive' if r.get('arxiv')
+                             else source.get('original_file', 'original.pdf'))
+            relative = Path(original_name)
+            if relative.is_absolute() or '..' in relative.parts:
+                raise ValueError('unsafe source acquisition path')
+            original = directory / relative
+            if not original.resolve().is_relative_to(directory.resolve()):
+                raise ValueError('source acquisition path escapes retained paper')
+            if not r.get('arxiv') and original.suffix.lower() != '.pdf':
+                raise ValueError('PDF source acquisition path must identify a PDF')
+            if source['sha256'] != sha(original.read_bytes()):
+                raise ValueError('source acquisition hash mismatch')
     if alpha:
         labels, text = bibliography(records, refs)
         if any(labels[r['id']] != r['key'] for r in records):
@@ -225,7 +263,7 @@ def replacements(root, mapping):
     changes = {}
     if not mapping:
         return changes
-    for base in ('draft', 'notes', 'agents', 'workflow'):
+    for base in ('draft', 'notes', 'agents', '.agents/skills', 'docs', 'workflow'):
         for p in (root / base).rglob('*'):
             if not p.is_file() or p.suffix not in {'.tex', '.md', '.json'} or p.is_symlink():
                 continue
